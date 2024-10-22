@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fylmyki</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body, html {
+            height: 100%;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5dc; /* Beige background */
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            background-color: #5d4037; /* Dark brown */
+            color: #fff8dc; /* Cornsilk */
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #8b6b61; /* Medium brown */
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 15px;
+        }
+
+        nav ul li a {
+            color: #fff8dc; /* Cornsilk */
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        /* Make the content fill the remaining space */
+        .content {
+            flex: 1;
+            padding: 20px;
+        }
+
+        section {
+            padding: 20px;
+            margin: 20px;
+            background-color: #fff; /* White background */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #5d4037; /* Dark brown */
+            border-bottom: 2px solid #d2b48c; /* Tan */
+            padding-bottom: 5px;
+        }
+
+        article {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+
+        article img {
+            width: 150px;
+            height: 220px;
+            margin-right: 20px;
+        }
+
+        article div {
+            max-width: 600px;
+        }
+
+        footer {
+            background-color: #5d4037; /* Dark brown */
+            color: #fff8dc; /* Cornsilk */
+            text-align: center;
+            padding: 10px;
+        }
+
+        footer a {
+            color: #d2b48c; /* Tan */
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        .movie-list, .tv-show-list, .celeb-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .movie, .tv-show, .celeb {
+            background-color: #f5f5f5; /* Light beige */
+            padding: 10px;
+            border: 1px solid #ccc;
+            width: 200px;
+            text-align: center;
+        }
+
+        .movie img, .tv-show img, .celeb img {
+            width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+        }
+
+        /* Hover effect */
+        .movie:hover, .tv-show:hover, .celeb:hover {
+            background-color: #d2b48c; /* Tan */
+            transition: background-color 0.3s ease;
+        }
+
+        .movie h3, .tv-show h3, .celeb h3 {
+            font-size: 1.1em;
+            color: #5d4037; /* Dark brown */
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Fylmyki</h1>
+        <p>Your movie-watching compass—let the ratings guide you!</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#movies">Movies</a></li>
+            <li><a href="#tvshows">TV Shows</a></li>
+            <li><a href="#celebrities">Celebrities</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="content">
+        <section id="featured">
+            <h2>Featured Movie</h2>
+            <article>
+                <!-- Example Movie Poster -->
+                <img src="https://via.placeholder.com/150x220" alt="Movie Poster">
+                <div>
+                    <h3>The Shawshank Redemption (1994)</h3>
+                    <p>Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.</p>
+                    <p><strong>Director:</strong> Frank Darabont</p>
+                    <p><strong>Stars:</strong> Tim Robbins, Morgan Freeman, Bob Gunton</p>
+                </div>
+            </article>
+        </section>
+
+        <section id="movies">
+            <h2>Popular Movies</h2>
+            <div class="movie-list">
+                <!-- Movie 1 -->
+                <div class="movie">
+                    <img src="https://via.placeholder.com/150x220" alt="Inception Poster">
+                    <h3>Inception (2010)</h3>
+                    <p>A thief who steals corporate secrets through dream-sharing technology.</p>
+                </div>
+                <!-- Movie 2 -->
+                <div class="movie">
+                    <img src="https://via.placeholder.com/150x220" alt="Interstellar Poster">
+                    <h3>Interstellar (2014)</h3>
+                    <p>A team of explorers travel through a wormhole in space.</p>
+                </div>
+                <!-- Movie 3 -->
+                <div class="movie">
+                    <img src="https://via.placeholder.com/150x220" alt="The Dark Knight Poster">
+                    <h3>The Dark Knight (2008)</h3>
+                    <p>The Joker wreaks havoc on Gotham and Batman tries to stop him.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="tvshows">
+            <h2>Popular TV Shows</h2>
+            <div class="tv-show-list">
+                <!-- TV Show 1 -->
+                <div class="tv-show">
+                    <img src="https://via.placeholder.com/150x220" alt="Breaking Bad Poster">
+                    <h3>Breaking Bad (2008–2013)</h3>
+                    <p>A chemistry teacher turns into a methamphetamine producer.</p>
+                </div>
+                <!-- TV Show 2 -->
+                <div class="tv-show">
+                    <img src="https://via.placeholder.com/150x220" alt="Game of Thrones Poster">
+                    <h3>Game of Thrones (2011–2019)</h3>
+                    <p>Noble families wage war to control Westeros.</p>
+                </div>
+                <!-- TV Show 3 -->
+                <div class="tv-show">
+                    <img src="https://via.placeholder.com/150x220" alt="Stranger Things Poster">
+                    <h3>Stranger Things (2016–)</h3>
+                    <p>A small town uncovers a mystery involving supernatural forces.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="celebrities">
+            <h2>Popular Celebrities</h2>
+            <div class="celeb-list">
+                <!-- Celebrity 1 -->
+                <div class="celeb">
+                    <img src="https://via.placeholder.com/150x220" alt="Leonardo DiCaprio">
+                    <h3>Leonardo DiCaprio</h3>
+                    <p>Known for: Inception, Titanic, The Revenant</p>
+                </div>
+                <!-- Celebrity 2 -->
+                <div class="celeb">
+                    <img src="https://via.placeholder.com/150x220" alt="Meryl Streep">
+                    <h3>Meryl Streep</h3>
+                    <p>Known for: The Devil Wears Prada, Mamma Mia!, The Iron Lady</p>
+                </div>
+                <!-- Celebrity 3 -->
+                <div class="celeb">
+                    <img src="https://via.placeholder.com/150x220" alt="Robert Downey Jr.">
+                    <h3>Robert Downey Jr.</h3>
+                    <p>Known for: Iron Man, Sherlock Holmes, Avengers: Endgame</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>© 2024 Fylmyki. All Rights Reserved.</p>
+        <p><a href="#contact">Contact Us</a></p>
+    </footer>
+
+</body>
+</html>
