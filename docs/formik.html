@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="sk">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Registračný Formulár</title>
+</head>
+<style>
+    @font-face {
+        font-family: "Poppins";
+        src: url(fonts/Poppins.ttf)
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+    }
+
+    body {
+        background-color: aqua;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+        min-height: 100vh;
+        margin: 0;
+        font-family: "Poppins", sans-serif;
+        background: linear-gradient(pink, cyan);
+    }
+
+    .container {
+        max-width: 700px;
+        width: 100%;
+        background-color: white;
+        padding: 25px 30px;
+        border-radius: 5px;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+    }
+
+    .container .title {
+        font-size: 25px;
+        font-weight: 500;
+        position: relative;
+    }
+
+    .container .title::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        height: 3px;
+        width: 30px;
+        border-radius: 5px;
+        background: linear-gradient(blue, red);
+    }
+
+    .container form .user-details {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin: 20px 0 12px 0;
+    }
+
+    form .user-details .input-box {
+        margin-bottom: 15px;
+        width: calc(100% / 2 - 20px)
+    }
+
+    .input-box .user-details .input {
+        display: block;
+        font-weight: 500;
+        margin-bottom: 5px;
+        }
+    .input-box .user-details .input {
+        height: 45px;
+        width: 100%;
+        outline: none;
+        font-size-adjust: 16px;
+        border-radius: 5px;
+        padding-left: 15px;
+        border: 1px solid #ccc;
+        border-bottom-width: 2px;
+        transition: all 0.3s ease;
+    }
+    .user-details .input-box input:focus
+    .user-details .input-box input:valid 
+    {
+        border: color(#9b59b6);
+    }
+    form .gender-details .gender-title 
+    {
+        font-size: 20px;
+        font-weight: 500;
+    }
+    form .category {
+        display: block;
+        width: 80%;
+        margin: 14px 0;
+        justify-content: center;
+    }
+    form .category .label
+    {
+        display: block;
+        align-items: center;
+        cursor:pointer;
+    }
+</style>
+
+<body>
+
+    <div class="container">
+        <div class="title">
+            <h2>Registrácia</h2>
+        </div>
+        <div class="content">
+            <form class="form-registration">
+                <div class="user-details">
+                    <div class="input-box">
+                        <span class="details">Meno</span>
+                        <input type="text" id="Meno" name="Meno" placeholder="Meno" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Prezývka</span>
+                        <input type="text" id="prezyvka" name="prezyvka" placeholder="prezyvka" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Email</span>
+                        <input type="email" id="email" name="prezyvka" placeholder="Email" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Tel. číslo</span>
+                        <input type="number" id="Telephone" name="Telephone" placeholder="Tel. číslo" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Heslo</span>
+                        <input type="password" id="password" name="password" placeholder="Heslo">
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Potvrď heslo</span>
+                        <input type="text" id="confirmpass" name="confirmpass" placeholder="Potvrď heslo">
+                    </div>
+                </div>
+                <div class="gender-details">
+                    <span class="gender-title">Pohlavie</span>
+                    <div class="category">
+                        <input type="radio" name="gender" id="dot-1">
+                        <label for="dot-1">
+                            <span class="dot one"></span>
+                            <span class="gender">Muž</span>
+                        </label>
+                        <input type="radio" name="gender" id="dot-2">
+                        <label for="dot-2">
+                            <span class="dot two"></span>
+                            <span class="gender">Žena</span>
+                        </label>
+                        <input type="radio" name="gender" id="dot-3">
+                        <label for="dot-3">
+                            <span class="dot three"></span>
+                            <span class="gender">Iné</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="button">
+                    <input type="submit" value="Registrovať">
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
