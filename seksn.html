@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="sk">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NAVIGEJšN</title>
+    <style>
+        .body {
+            height: 100%;
+        }
+
+        .backtotop {
+            position: fixed;
+            bottom: 50px;
+            right: 20px;
+            display: fixed;
+            padding: 10px;
+            background-color: black;
+            color: green
+        }
+    </style>
+   
+
+
+</head>
+
+<body>
+    <button id="myBtn" onclick="scrollToTop()" class="backtotop">Klikni ma</button>
+    <iframe style="border: 0;" src="ad.html" width="200" height="200"></iframe>
+    <iframe src="https://www.youtube.com/embed/Zhe2uLkKMYM"></iframe>
+    <iframe name="razdva" width="750" height="500"></iframe>
+    <h2 style="padding: 2500px">Links to content in iframe</h2>
+    <a href="https://example.com" target="razdva">Loadexample.com</a>
+    <a href src="https://www.youtube.com/embed/Zhe2uLkKMYM" target="razdva">Loda yt</a>
+</body>
+<script>
+    let mybutton = document.getElementById("myBtn");
+
+    window.onscroll = function () { scrollFunction() };
+
+    function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            mybutton.style.display = "block";
+        } else {
+            mybutton.style.display = "none";
+        }
+    }
+
+    function scrollToTop() {
+        window.scrollTo({top: 0, behavior: 'smooth'});
+    }        
+    </script>
+
+</html>
