@@ -16,29 +16,26 @@
             src: url(fonts/Chokokutai-Regular.ttf);
         }
 
-        h1 {
-            font-size: 50px;
-            font-family: "Choko";
-            color: white;
-        }
-
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        body,
-        html {
-            height: 100%;
-        }
-
+        html,
         body {
+            height: 100%;
             font-family: Arial, sans-serif;
             background-color: #191970;
             color: black;
             display: flex;
             flex-direction: column;
+        }
+
+        h1 {
+            font-size: 50px;
+            font-family: "Choko";
+            color: white;
         }
 
         header {
@@ -182,6 +179,27 @@
             font-size: 25px;
             font-weight: bold;
         }
+
+     
+        .stars {
+            display: flex;
+            gap: 5px;
+            font-size: 40px;
+            color: #ffd700; 
+            cursor: pointer;
+        }
+
+        .stars i {
+            pointer-events: none;
+        }
+
+        .stars .filled {
+            color: #ffd700; 
+        }
+
+        .stars .empty {
+            color: #ccc; 
+        }
     </style>
 </head>
 
@@ -209,9 +227,19 @@
                     alt="The Conjuring 2 Poster">
                 <div>
                     <h3>The Conjuring 2 (2016)</h3>
-                    <p>Paranormal investigators Ed and Lorraine Warren travel to London to help a family terrorized by a malicious spirit.</p>
+                    <p>Paranormal investigators Ed and Lorraine Warren travel to London to help a family terrorized by a malicious spirit. The Conjuring 2 is a chilling supernatural horror film directed by James Wan. Released in 2016, the movie follows the famous paranormal investigators, Ed and Lorraine Warren, as they travel to Enfield, England, to help a family plagued by a terrifying and malicious spirit. Set in the late 1970s, the story revolves around the Hodgson family, whose young daughter becomes the target of a sinister poltergeist. As the Warrens dig deeper into the haunting, they uncover dark secrets and face one of the most dangerous cases of their career. Packed with suspense, emotional drama, and terrifying moments, The Conjuring 2 is a masterful blend of spine-tingling scares and heartfelt storytelling, solidifying its place as a modern horror classic.</p>
                     <p><strong>Director:</strong> James Wan</p>
                     <p><strong>Stars:</strong> Vera Farmiga, Patrick Wilson, Madison Wolfe</p>
+
+                    <h3>Rate this Movie:</h3>
+                    <div class="stars" id="starRating">
+                        <span class="empty">&#9734;</span>
+                        <span class="empty">&#9734;</span>
+                        <span class="empty">&#9734;</span>
+                        <span class="empty">&#9734;</span>
+                        <span class="empty">&#9734;</span>
+                    </div>
+                    <p id="ratingValue">Rating: 0/5</p>
                 </div>
             </article>
         </section>
@@ -219,7 +247,8 @@
         <section id="trailer">
             <h2>Watch The Trailer</h2>
             <div>
-                <iframe width="100%" height="500" src="https://www.youtube.com/embed/VFsmuRPClr4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe width="100%" height="800" src="https://www.youtube.com/embed/VFsmuRPClr4" frameborder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
         </section>
     </div>
@@ -237,7 +266,7 @@
     </div>
 
     <footer>
-        <p>© 2024 The Conjuring 2 Fan Page.</p>
+        <p>© 2024 Fylmyky.</p>
     </footer>
 
     <script>
@@ -250,6 +279,27 @@
             document.getElementById('contactPopup').style.display = 'none';
             document.getElementById('overlay').style.display = 'none';
         }
+
+  
+        let stars = document.querySelectorAll('.stars span');
+        let ratingValue = document.getElementById('ratingValue');
+
+        stars.forEach((star, index) => {
+            star.addEventListener('click', () => {
+            
+                stars.forEach((s, i) => {
+                    if (i <= index) {
+                        s.classList.remove('empty');
+                        s.classList.add('filled');
+                    } else {
+                        s.classList.remove('filled');
+                        s.classList.add('empty');
+                    }
+                });
+
+                ratingValue.textContent = `Rating: ${index + 1}/5`;
+            });
+        });
     </script>
 
 </body>
