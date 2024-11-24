@@ -182,16 +182,16 @@
 
         .movie-list {
     display: flex;
-    justify-content: left; /* Center-align all the movies */
-    gap: 10px; /* Reduced gap between movies */
+    justify-content: left; 
+    gap: 10px; 
     flex-wrap: nowrap;
-    overflow-x: auto; /* Allows scrolling if content overflows */
+    overflow-x: auto;
     padding: 10px 0;
 }
 
 .movie {
     text-align: center;
-    flex: 0 0 auto; /* Ensures that items don't shrink or grow */
+    flex: 0 0 auto; 
     width: 150px;
 }
 
@@ -203,12 +203,30 @@
 }
 
 .movie p {
-    margin-top: 5px; /* Slightly smaller space between image and text */
-    font-size: 14px;
+    margin-top: 5px;
     font-weight: bold;
     color: #800020;
 }
 
+#back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #4169E1;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 50%;
+            font-size: 18px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            display: none; 
+            z-index: 1000;
+        }
+
+        #back-to-top:hover {
+            background-color: #800020;
+        }
 
     </style>
 </head>
@@ -333,6 +351,7 @@
             <button type="button" onclick="closeContact()">Close</button>
         </form>
     </div>
+    <button id="back-to-top" title="Go to top">↑</button>
 
     <footer>
         <p>© 2024 Fylmyky.</p>
@@ -348,6 +367,19 @@
             document.getElementById('contactPopup').style.display = 'none';
             document.getElementById('overlay').style.display = 'none';
         }
+        const backToTopButton = document.getElementById('back-to-top');
+
+window.onscroll = function () {
+    if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+        backToTopButton.style.display = "block";
+    } else {
+        backToTopButton.style.display = "none";
+    }
+};
+
+backToTopButton.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+});
     </script>
 
 </body>
