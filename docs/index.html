@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,6 +6,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fylmyki</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
     <style>
         @font-face {
             font-family: "Amazon";
@@ -27,6 +30,26 @@
             padding: 0;
             box-sizing: border-box;
         }
+        #back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #4169E1;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 50%;
+            font-size: 18px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            display: none; /* Initially hidden */
+            z-index: 1000;
+        }
+
+        #back-to-top:hover {
+            background-color: #800020;
+        }
+
 
         body,
         html {
@@ -212,9 +235,9 @@
             background-color: rgba(0, 0, 0, 0.5);
             z-index: 5;
         }
-        a 
-        {
-            color:#800020;
+
+        a {
+            color: #800020;
             font-size: 25px;
             font-weight: bold;
         }
@@ -222,7 +245,6 @@
 </head>
 
 <body>
-
     <header>
         <h1>Fylmyki</h1>
         <p1>Let the ratings guide you!</p1>
@@ -234,70 +256,56 @@
             <li><a href="#movies">Movies</a></li>
             <li><a href="#tvshows">TV Shows</a></li>
             <li><a href="#celebrities">Celebrities</a></li>
-            <li><a href="#" onclick="openContact()">Contact Us</a></li>
+            <li><a href="#contact">Contact Us</a></li>
         </ul>
     </nav>
 
     <div class="content">
         <section id="featured">
             <h2>Featured Movie</h2>
-            <article>
-                <img src="https://media.posterlounge.com/img/products/710000/706559/706559_poster.jpg"
-                    alt="Featured Poster">
-                <div>
-                    <h3>The Shawshank Redemption (1994)</h3>
-                    <p>Two imprisoned men bond over a number of years, finding solace and eventual redemption through
-                        acts of common decency.</p>
-                    <p><strong>Director:</strong> Frank Darabont</p>
-                    <p><strong>Stars:</strong> Tim Robbins, Morgan Freeman, Bob Gunton</p>
-                </div>
-            </article>
-        </section>
-
+            <article id="featured-movie">
+            </section>
         <section id="movies">
             <h2>Popular Movies</h2>
             <div class="movie-list">
-                <div class="movie">
-                    <img src="https://m.media-amazon.com/images/M/MV5BOTRkMDlmZWEtMzQyYy00YzgyLTgwM2QtNzgxYmIwNGVlYmJlXkEyXkFqcGc@._V1_.jpg"
-                        alt="Conjuring 2 Poster">
-                       <a href="conjuring2.html">Conjurig 2 (2016)</a>
-                    <p>Follows paranormal investigators Ed and Lorraine Warren as they confront a
-                        haunting in London.</p>
+                <div class="movie"> <img
+                        src="https://m.media-amazon.com/images/M/MV5BOTRkMDlmZWEtMzQyYy00YzgyLTgwM2QtNzgxYmIwNGVlYmJlXkEyXkFqcGc@._V1_.jpg"
+                        alt="Conjuring 2 Poster"> <a href="conjuring2.html">Conjurig 2 (2016)</a>
+                    <p>Follows paranormal investigators Ed and Lorraine Warren as they confront a haunting in London.
+                    </p>
                 </div>
-                <div class="movie">
-                    <img src="https://m.media-amazon.com/images/M/MV5BNThiZjA3MjItZGY5Ni00ZmJhLWEwN2EtOTBlYTA4Y2E0M2ZmXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg"
+                <div class="movie"> <img
+                        src="https://m.media-amazon.com/images/M/MV5BNThiZjA3MjItZGY5Ni00ZmJhLWEwN2EtOTBlYTA4Y2E0M2ZmXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg"
                         alt="Poster">
                     <h3>Spider-Man: Across the Spider-Verse(2023)</h3>
-                    <p>Follows Spider-People across multiple universes to save their
-                        realities.</p>
+                    <p>Follows Spider-People across multiple universes to save their realities.</p>
                 </div>
-                <div class="movie">
-                    <img src="https://m.media-amazon.com/images/M/MV5BYTJkNGQyZDgtZDQ0NC00MDM0LWEzZWQtYzUzZDEwMDljZWNjXkEyXkFqcGc@._V1_.jpg"
+                <div class="movie"> <img
+                        src="https://m.media-amazon.com/images/M/MV5BYTJkNGQyZDgtZDQ0NC00MDM0LWEzZWQtYzUzZDEwMDljZWNjXkEyXkFqcGc@._V1_.jpg"
                         alt="Godfather Poster">
                     <h3>The Godfather (1972)</h3>
                     <p>The aging patriarch of an organized crime dynasty transfers control of his clandestine empire to
                         his reluctant son.</p>
                 </div>
-                <div class="movie">
-                    <img src="https://m.media-amazon.com/images/I/71DwIcSgFcS.jpg" alt="Inception Poster">
+                <div class="movie"> <img src="https://m.media-amazon.com/images/I/71DwIcSgFcS.jpg"
+                        alt="Inception Poster">
                     <h3>Inception (2010)</h3>
                     <p>A thief who steals corporate secrets through dream-sharing technology.</p>
                 </div>
-                <div class="movie">
-                    <img src="https://m.media-amazon.com/images/I/71dN1QYnf+L._AC_UF894,1000_QL80_.jpg"
+                <div class="movie"> <img src="https://m.media-amazon.com/images/I/71dN1QYnf+L._AC_UF894,1000_QL80_.jpg"
                         alt="Interstellar Poster">
                     <h3>Interstellar (2014)</h3>
                     <p>A team of explorers travel through a wormhole in space.</p>
                 </div>
-                <div class="movie">
-                    <img src="https://image.pmgstatic.com/cache/resized/w420/files/images/film/posters/166/023/166023638_f17859.jpg"
+                <div class="movie"> <img
+                        src="https://image.pmgstatic.com/cache/resized/w420/files/images/film/posters/166/023/166023638_f17859.jpg"
                         alt="The Batman Poster">
                     <h3>The Batman (2022)</h3>
                     <p>Offers a darker, more grounded take on the iconic superhero, exploring themes of corruption and
                         vengeance in a gritty Gotham City.</p>
                 </div>
-                <div class="movie">
-                    <img src="https://image.pmgstatic.com/cache/resized/w420/files/images/film/posters/168/364/168364162_l4re4a.png"
+                <div class="movie"> <img
+                        src="https://image.pmgstatic.com/cache/resized/w420/files/images/film/posters/168/364/168364162_l4re4a.png"
                         alt="LOFR">
                     <h3>The Lord of the Rings: The Return of the King(2003)</h3>
                     <p>Gandalf and Aragorn lead the World of Men against Sauron's army to draw his gaze from Frodo and
@@ -305,51 +313,48 @@
                 </div>
             </div>
         </section>
-
         <section id="tvshows">
             <h2>Popular TV Shows</h2>
             <div class="tv-show-list">
-                <div class="tv-show">
-                    <img src="https://m.media-amazon.com/images/M/MV5BNTQzNGZjNDEtOTMwYi00MzFjLWE2ZTYtYzYxYzMwMjZkZDc5XkEyXkFqcGc@._V1_QL75_UX190_CR0,2,190,281_.jpg"
+                <div class="tv-show"> <img
+                        src="https://m.media-amazon.com/images/M/MV5BNTQzNGZjNDEtOTMwYi00MzFjLWE2ZTYtYzYxYzMwMjZkZDc5XkEyXkFqcGc@._V1_QL75_UX190_CR0,2,190,281_.jpg"
                         alt="Arcane poster">
-                    <h3>Sherlock</h3>
+                    <h3>Sherlock(2010–2017)</h3>
                     <p>Sherlock is a modern take on the classic detective stories, featuring Sherlock Holmes and
-                        Dr.Watson solving crimes in London.
-                    </p>
+                        Dr.Watson solving crimes in London. </p>
                 </div>
-                <div class="tv-show">
-                    <img src="https://preview.redd.it/drd9eqknks481.jpg?width=1080&crop=smart&auto=webp&s=00776b18b0215c23db02ed7392ec7f7a52ab3c01"
+                <div class="tv-show"> <img
+                        src="https://preview.redd.it/drd9eqknks481.jpg?width=1080&crop=smart&auto=webp&s=00776b18b0215c23db02ed7392ec7f7a52ab3c01"
                         alt="Arcane poster">
                     <h3>Arcane: League of Legends(2021-2024)</h3>
                     <p>Delves into the origins of characters from Piltover and Zaun.</p>
                 </div>
-                <div class="tv-show">
-                    <img src="https://m.media-amazon.com/images/M/MV5BZjkxZWJiNTUtYjQwYS00MTBlLTgwODQtM2FkNWMyMjMwOGZiXkEyXkFqcGc@._V1_QL75_UX190_CR0,2,190,281_.jpg"
+                <div class="tv-show"> <img
+                        src="https://m.media-amazon.com/images/M/MV5BZjkxZWJiNTUtYjQwYS00MTBlLTgwODQtM2FkNWMyMjMwOGZiXkEyXkFqcGc@._V1_QL75_UX190_CR0,2,190,281_.jpg"
                         alt="Money Heist poster">
                     <h3>Money Heist(2017-2021)</h3>
                     <p>Follows a thrilling heist led by a mastermind and his skilled team.</p>
                 </div>
-                <div class="tv-show">
-                    <img src="https://m.media-amazon.com/images/M/MV5BN2VhMjJjNjYtNjc4Yi00YjE0LTk5NGUtNjRhZWI2NzE1MWMxXkEyXkFqcGc@._V1_.jpg"
+                <div class="tv-show"> <img
+                        src="https://m.media-amazon.com/images/M/MV5BN2VhMjJjNjYtNjc4Yi00YjE0LTk5NGUtNjRhZWI2NzE1MWMxXkEyXkFqcGc@._V1_.jpg"
                         alt="Chernobyl poster">
                     <h3>Chernobyl (2009)</h3>
-                    <p>Reveals the tragedy and heroism behind the 1986 nuclear disaster.
-                    </p>
+                    <p>Reveals the tragedy and heroism behind the 1986 nuclear disaster. </p>
                 </div>
-                <div class="tv-show">
-                    <img src="https://www.tallengestore.com/cdn/shop/products/BreakingBad-BryanCranston-Heisenberg-TVShowPoster9.jpg?v=1683604400"
+                <div class="tv-show"> <img
+                        src="https://www.tallengestore.com/cdn/shop/products/BreakingBad-BryanCranston-Heisenberg-TVShowPoster9.jpg?v=1683604400"
                         alt="Breaking Bad Poster">
                     <h3>Breaking Bad (2008–2013)</h3>
                     <p>A chemistry teacher turns into a methamphetamine producer.</p>
                 </div>
-                <div class="tv-show">
-                    <img src="https://m.media-amazon.com/images/I/61W-KI4mR6L._AC_UF894,1000_QL80_.jpg"
+                <div class="tv-show"> <img
+                        src="https://m.media-amazon.com/images/I/61W-KI4mR6L._AC_UF894,1000_QL80_.jpg"
                         alt="Game of Thrones Poster">
                     <h3>Game of Thrones (2011–2019)</h3>
                     <p>Noble families wage war to control Westeros.</p>
                 </div>
-                <div class="tv-show">
-                    <img src="https://image.pmgstatic.com/cache/resized/w420/files/images/film/posters/160/891/160891070_949a06.jpg"
+                <div class="tv-show"> <img
+                        src="https://image.pmgstatic.com/cache/resized/w420/files/images/film/posters/160/891/160891070_949a06.jpg"
                         alt="Stranger Things Poster">
                     <h3>Stranger Things (2016–2025)</h3>
                     <p>A small town uncovers a mystery involving supernatural forces.</p>
@@ -357,86 +362,155 @@
             </div>
     </div>
     </section>
-
     <section id="celebrities">
         <h2>Popular Celebrities</h2>
         <div class="celeb-list">
-            <div class="celeb">
-                <img src="https://m.media-amazon.com/images/M/MV5BMjI0MTg3MzI0M15BMl5BanBnXkFtZTcwMzQyODU2Mw@@._V1_FMjpg_UX1000_.jpg    "
+            <div class="celeb"> <img
+                    src="https://m.media-amazon.com/images/M/MV5BMjI0MTg3MzI0M15BMl5BanBnXkFtZTcwMzQyODU2Mw@@._V1_FMjpg_UX1000_.jpg    "
                     alt="Leonardo DiCaprio">
                 <h3>Leonardo DiCaprio</h3>
                 <p>Known for: Inception, Titanic, The Revenant</p>
             </div>
-            <div class="celeb">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Meryl_Streep_December_2018_%28cropped%29.jpg/800px-Meryl_Streep_December_2018_%28cropped%29.jpg"
+            <div class="celeb"> <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Meryl_Streep_December_2018_%28cropped%29.jpg/800px-Meryl_Streep_December_2018_%28cropped%29.jpg"
                     alt="Meryl Streep">
                 <h3>Meryl Streep</h3>
                 <p>Known for: The Devil Wears Prada, Mamma Mia!, The Iron Lady</p>
             </div>
-            <div class="celeb">
-                <img src="https://m.media-amazon.com/images/M/MV5BNzg1MTUyNDYxOF5BMl5BanBnXkFtZTgwNTQ4MTE2MjE@._V1_.jpg"
+            <div class="celeb"> <img
+                    src="https://m.media-amazon.com/images/M/MV5BNzg1MTUyNDYxOF5BMl5BanBnXkFtZTgwNTQ4MTE2MjE@._V1_.jpg"
                     alt="Robert Downey Jr.">
                 <h3>Robert Downey Jr.</h3>
                 <p>Known for: Iron Man, Sherlock Holmes, Avengers: Endgame</p>
             </div>
-            <div class="celeb">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/4/46/Johnny_Depp_%28July_2009%29_2_cropped.jpg"
+            <div class="celeb"> <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/4/46/Johnny_Depp_%28July_2009%29_2_cropped.jpg"
                     alt="Johnny Depp.">
                 <h3>Johnny Depp</h3>
-                <p>A versatile actor celebrated for his eccentric roles in films such as Pirates of the Caribbean
-                    and Edward Scissorhands.</p>
+                <p>A versatile actor celebrated for his eccentric roles in films such as Pirates of the Caribbean and
+                    Edward Scissorhands.</p>
             </div>
-            <div class="celeb">
-                <img src="https://m.media-amazon.com/images/M/MV5BMTQwMjAwNzI0M15BMl5BanBnXkFtZTcwOTY1MTMyOQ@@._V1_.jpg"
+            <div class="celeb"> <img
+                    src="https://m.media-amazon.com/images/M/MV5BMTQwMjAwNzI0M15BMl5BanBnXkFtZTcwOTY1MTMyOQ@@._V1_.jpg"
                     alt="Jim Carrey">
                 <h3>Jim Carrey</h3>
-                <p>A comedic actor renowned for his energetic performances in films like Ace Ventura: Pet Detective
-                    and The Truman Show.</p>
+                <p>A comedic actor renowned for his energetic performances in films like Ace Ventura: Pet Detective and
+                    The Truman Show.</p>
             </div>
-            <div class="celeb">
-                <img src="https://m.media-amazon.com/images/M/MV5BMTc0MDMyMzI2OF5BMl5BanBnXkFtZTcwMzM2OTk1MQ@@._V1_FMjpg_UX1000_.jpg"
+            <div class="celeb"> <img
+                    src="https://m.media-amazon.com/images/M/MV5BMTc0MDMyMzI2OF5BMl5BanBnXkFtZTcwMzM2OTk1MQ@@._V1_FMjpg_UX1000_.jpg"
                     alt="Morgan Freeman">
                 <h3>Morgan Freeman</h3>
-                <p>An acclaimed actor and narrator known for his distinctive voice and roles in films like The
-                    Shawshank Redemption and Driving Miss Daisy.</p>
+                <p>An acclaimed actor and narrator known for his distinctive voice and roles in films like The Shawshank
+                    Redemption and Driving Miss Daisy.</p>
             </div>
-            <div class="celeb">
-                <img src="https://m.media-amazon.com/images/M/MV5BMTQzNjU3MDczN15BMl5BanBnXkFtZTYwNzY2Njc4._V1_FMjpg_UX1000_.jpg"
+            <div class="celeb"> <img
+                    src="https://m.media-amazon.com/images/M/MV5BMTQzNjU3MDczN15BMl5BanBnXkFtZTYwNzY2Njc4._V1_FMjpg_UX1000_.jpg"
                     alt="Julia Roberts">
                 <h3>Julia Roberts</h3>
                 <p>Julia Roberts is an Academy Award-winning actress known for her roles in films like Pretty Woman,
                     Erin Brockovich, and Notting Hill.</p>
             </div>
         </div>
+        <button id="back-to-top" title="Go to top">↑</button>
+
     </section>
-    </div>
-    <div class="overlay" id="overlay" onclick="closeContact()"></div>
-    <div class="contact-popup" id="contactPopup">
-        <h2>Contact Us</h2>
-        <form>
-            <input type="text" placeholder="Your Name" required>
-            <input type="email" placeholder="Your Email" required>
-            <textarea placeholder="Your Message" rows="4" required></textarea>
-            <button type="submit">Send</button>
-            <button type="button" onclick="closeContact()">Close</button>
-        </form>
+
     </div>
 
     <footer>
         <p>© 2024 Fylmyki.</p>
     </footer>
+
     <script>
-        function openContact() {
-            document.getElementById('contactPopup').style.display = 'block';
-            document.getElementById('overlay').style.display = 'block';
-        }
+        const featuredMovies = [
+            {
+                title: "Fight Club(1999)",
+                description: "An insomniac office worker and a devil-may-care soap maker form an underground fight club that evolves into much more.",
+                director: "David Fincher",
+                stars: "Brad Pitt , Edward Norton , Meat Loaf",
+                imageUrl: "https://m.media-amazon.com/images/M/MV5BOTgyOGQ1NDItNGU3Ny00MjU3LTg2YWEtNmEyYjBiMjI1Y2M5XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg"
+            },
+            {
+                title: "The Shawshank Redemption (1994)",
+                description: "Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.",
+                director: "Frank Darabont",
+                stars: "Tim Robbins, Morgan Freeman, Bob Gunton",
+                imageUrl: "https://m.media-amazon.com/images/I/51NiGlapXlL.jpg"
+            },
+            {
+                title: "Pulp Fiction (1994)",
+                description: "The lives of two mob hitmen, a boxer, a gangster, and his wife intertwine in four tales of violence and redemption.",
+                director: "Quentin Tarantino",
+                stars: "John Travolta, Uma Thurman, Samuel L. Jackson",
+                imageUrl: "https://m.media-amazon.com/images/I/71c05lTE03L._AC_SY679_.jpg"
+            },
+            {
+                title: "The Dark Knight (2008)",
+                description: "When the menace known as the Joker emerges, Batman must accept one of the greatest psychological and physical tests of his ability to fight injustice.",
+                director: "Christopher Nolan",
+                stars: "Christian Bale, Heath Ledger, Aaron Eckhart",
+                imageUrl: "https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_FMjpg_UX1000_.jpg"
+            },
+            {
+                title: "The Matrix (1999)",
+                description: "A computer hacker learns about the true nature of his reality and his role in the war against its controllers.",
+                director: "The Wachowskis",
+                stars: "Keanu Reeves, Laurence Fishburne, Carrie-Anne Moss",
+                imageUrl: "https://m.media-amazon.com/images/I/51vpnbwFHrL._AC_SY679_.jpg"
+            },
+            {
+                title: "The Lord of the Rings: The Fellowship of the Ring (2001)",
+                description: "A meek hobbit and his friends set out on a journey to destroy a powerful ring and save Middle-earth from the Dark Lord.",
+                director: "Peter Jackson",
+                stars: "Elijah Wood, Ian McKellen, Orlando Bloom",
+                imageUrl: "https://m.media-amazon.com/images/I/51Qvs9i5a%2BL._AC_.jpg"
+            },
+            {
+                title: "Goodfellas (1990)",
+                description: "The story of a young man in the mob, from his rise to power to his fall, told through the lens of his connections with crime bosses.",
+                director: "Martin Scorsese",
+                stars: "Robert De Niro, Ray Liotta, Joe Pesci",
+                imageUrl: "https://m.media-amazon.com/images/M/MV5BN2E5NzI2ZGMtY2VjNi00YTRjLWI1MDUtZGY5OWU1MWJjZjRjXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg"
+            }
+        ];
 
-        function closeContact() {
-            document.getElementById('contactPopup').style.display = 'none';
-            document.getElementById('overlay').style.display = 'none';
+        function displayFeaturedMovie() {
+            const randomIndex = Math.floor(Math.random() * featuredMovies.length);
+            const movie = featuredMovies[randomIndex];
+
+            const featuredMovieSection = document.getElementById('featured-movie');
+            featuredMovieSection.innerHTML = `
+                    <img src="${movie.imageUrl}" alt="Featured Movie Poster" style="width: 150px; height: 220px; margin-right: 20px;">
+                    <div>
+                        <h3>${movie.title}</h3>
+                        <p>${movie.description}</p>
+                        <p><strong>Director:</strong> ${movie.director}</p>
+                        <p><strong>Stars:</strong> ${movie.stars}</p>
+                    </div>
+                `;
         }
+        
+
+        window.onload = displayFeaturedMovie;
+
+        // Display the Back to Top button when scrolling down
+        const backToTopButton = document.getElementById('back-to-top');
+
+        window.onscroll = function () {
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                backToTopButton.style.display = "block";
+            } else {
+                backToTopButton.style.display = "none";
+            }
+        };
+
+        // Scroll to the top when the button is clicked
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
     </script>
-
 </body>
 
 </html>
