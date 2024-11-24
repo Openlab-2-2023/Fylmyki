@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jim Carrey</title>
+    <style>
+        @font-face {
+            font-family: "Amazon";
+            src: url(fonts/AmazonEmber.ttf);
+        }
+
+        @font-face {
+            font-family: "Choko";
+            src: url(fonts/Chokokutai-Regular.ttf);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            height: 100%;
+            font-family: Arial, sans-serif;
+            background-color: #191970;
+            color: black;
+            display: flex;
+            flex-direction: column;
+        }
+
+        h1 {
+            font-size: 50px;
+            font-family: "Choko";
+            color: white;
+        }
+
+        header {
+            background-color: #4169E1;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #800020;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style: none;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .content {
+            flex: 1;
+            padding: 20px;
+        }
+
+        section {
+            padding: 20px;
+            margin: 20px;
+            background-color: #f5f5f5;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: darkred;
+            border-bottom: 2px solid #4169E1;
+            padding-bottom: 5px;
+        }
+
+        article {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+
+        article img {
+            width: 150px;
+            height: 220px;
+            margin-right: 20px;
+        }
+
+        article div {
+            max-width: 600px;
+            color: darkred;
+        }
+
+        footer {
+            background-color: #191970;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 5;
+        }
+
+        .contact-popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            z-index: 10;
+            border-radius: 8px;
+            width: 300px;
+        }
+
+        .contact-popup h2 {
+            color: #800020;
+            margin-bottom: 10px;
+        }
+
+        .contact-popup input,
+        .contact-popup textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #4169E1;
+            border-radius: 5px;
+        }
+
+        .contact-popup button {
+            background-color: #4169E1;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .contact-popup button:hover {
+            background-color: #800020;
+        }
+
+        a {
+            color: #800020;
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        .movie-list {
+    display: flex;
+    justify-content: left; /* Center-align all the movies */
+    gap: 10px; /* Reduced gap between movies */
+    flex-wrap: nowrap;
+    overflow-x: auto; /* Allows scrolling if content overflows */
+    padding: 10px 0;
+}
+
+.movie {
+    text-align: center;
+    flex: 0 0 auto; /* Ensures that items don't shrink or grow */
+    width: 150px;
+}
+
+.movie img {
+    width: 150px;
+    height: auto;
+    border: 2px solid #800020;
+    border-radius: 10px;
+}
+
+.movie p {
+    margin-top: 5px; /* Slightly smaller space between image and text */
+    font-size: 14px;
+    font-weight: bold;
+    color: #800020;
+}
+
+
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Jim Carrey</h1>
+        <p>The King of Comedy and Versatility!</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#about-jim">About Jim</a></li>
+            <li><a href="#works">Notable Works</a></li>
+            <li><a href="#" onclick="openContact()">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <div class="content">
+        <section id="about-jim">
+            <h2>About Jim Carrey</h2>
+            <article>
+                <img src="https://m.media-amazon.com/images/M/MV5BMTQwMjAwNzI0M15BMl5BanBnXkFtZTcwOTY1MTMyOQ@@._V1_FMjpg_UX1000_.jpg" alt="Jim Carrey">
+                <div>
+                    <h3>Jim Carrey</h3>
+                    <p>Jim Carrey is a Canadian-American actor, comedian, writer, and artist renowned for his exceptional comedic timing and dynamic performances. With his unique blend of physical comedy and emotional depth, he has won the hearts of audiences worldwide.</p>
+                    <p>From iconic roles in movies like *The Mask*, *Ace Ventura*, and *Bruce Almighty* to deeply moving performances in films like *The Truman Show* and *Eternal Sunshine of the Spotless Mind*, Jim Carrey is a versatile artist who continues to inspire creativity and laughter.</p>
+                </div>
+            </article>
+        </section>
+
+        <section id="works">
+            <h2>Notable Works</h2>
+            <div class="movie-list">
+                <div class="movie">
+                    <img src="https://m.media-amazon.com/images/M/MV5BOWU1M2Q5MDgtOTkxZS00NjdmLWFlNWEtOGEyOTNlNGYyYTZlXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Ace Ventura: Pet Detective">
+                    <p>Ace Ventura: Pet Detective</p>
+                </div>
+                <div class="movie">
+                    <img src="https://m.media-amazon.com/images/M/MV5BNGNmNjI0ZmMtMzI5MC00ZjUyLWFlZDEtYjUyMGZlN2E3N2E2XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="The Mask">
+                    <p>The Mask</p>
+                </div>
+                <div class="movie">
+                    <img src="https://m.media-amazon.com/images/M/MV5BNGQxZDA1MmMtYWQ1Ni00NTJmLTljMjgtZWVmODllODVhMzgyXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Dumb and Dumber">
+                    <p>Dumb and Dumber</p>
+                </div>
+                <div class="movie">
+                    <img src="https://m.media-amazon.com/images/M/MV5BMGQ4MTk5YjctNGE5NC00ODk4LWIzOWItNzNhODc0N2JmYzMzXkEyXkFqcGc@._V1_.jpg" alt="Liar Liar">
+                    <p>Liar Liar</p>
+                </div>
+                <div class="movie">
+                    <img src="https://m.media-amazon.com/images/M/MV5BNzA3ZjZlNzYtMTdjMy00NjMzLTk5ZGYtMTkyYzNiOGM1YmM3XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="The Truman Show">
+                    <p>The Truman Show</p>
+                </div>
+                <div class="movie">
+                    <img src="https://m.media-amazon.com/images/M/MV5BMTY4NzcwODg3Nl5BMl5BanBnXkFtZTcwNTEwOTMyMw@@._V1_FMjpg_UX1000_.jpg" alt="Eternal Sunshine of the Spotless Mind">
+                    <p>Eternal Sunshine of the Spotless Mind</p>
+                </div>
+                <div class="movie">
+                    <img src="https://m.media-amazon.com/images/M/MV5BZWM2ZjA2OTctZmRhMy00ZDIzLTkwZGQtYTRlNmQwZWZmMDBlXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Bruce Almighty">
+                    <p>Bruce Almighty</p>
+                </div>
+            </div>
+        </section>
+        <section id="awards">
+            <h2>Awards and Achievements</h2>
+            <ul>
+                <li><strong>Golden Globe Awards:</strong> 
+                    <ul>
+                        <li>Best Actor in a Motion Picture - Drama for *The Truman Show* (1999)</li>
+                        <li>Best Actor in a Motion Picture - Musical or Comedy for *Man on the Moon* (2000)</li>
+                    </ul>
+                </li>
+                <li><strong>MTV Movie & TV Awards:</strong> 
+                    <ul>
+                        <li>Best Comedic Performance for *Ace Ventura: Pet Detective* (1995)</li>
+                        <li>Best Villain for *The Cable Guy* (1997)</li>
+                        <li>Best Male Performance for *The Truman Show* (1999)</li>
+                    </ul>
+                </li>
+                <li><strong>People's Choice Awards:</strong>
+                    <ul>
+                        <li>Favorite Motion Picture Star in a Comedy (1999, 2000, and multiple other years)</li>
+                    </ul>
+                </li>
+                <li><strong>Critics' Choice Movie Awards:</strong>
+                    <ul>
+                        <li>Best Actor for *The Truman Show* (1998)</li>
+                    </ul>
+                </li>
+                <li><strong>Hollywood Film Awards:</strong> 
+                    <ul>
+                        <li>Best Ensemble for *Eternal Sunshine of the Spotless Mind* (2004)</li>
+                    </ul>
+                </li>
+                <li><strong>Teen Choice Awards:</strong> 
+                    <ul>
+                        <li>Choice Movie Actor for *Bruce Almighty* (2003)</li>
+                        <li>Choice Movie Villain for *How the Grinch Stole Christmas* (2001)</li>
+                    </ul>
+                </li>
+                <li><strong>Star on the Hollywood Walk of Fame:</strong> 
+                    <ul>
+                        <li>Jim Carrey was honored with a star on the Hollywood Walk of Fame in 1996.</li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+
+    </div>
+
+    <div class="overlay" id="overlay" onclick="closeContact()"></div>
+    <div class="contact-popup" id="contactPopup">
+        <h2>Contact Us</h2>
+        <form>
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" rows="4" required></textarea>
+            <button type="submit">Send</button>
+            <button type="button" onclick="closeContact()">Close</button>
+        </form>
+    </div>
+
+    <footer>
+        <p>© 2024 Fylmyky.</p>
+    </footer>
+
+    <script>
+        function openContact() {
+            document.getElementById('contactPopup').style.display = 'block';
+            document.getElementById('overlay').style.display = 'block';
+        }
+
+        function closeContact() {
+            document.getElementById('contactPopup').style.display = 'none';
+            document.getElementById('overlay').style.display = 'none';
+        }
+    </script>
+
+</body>
+
+</html>
