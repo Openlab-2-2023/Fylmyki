@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,22 +13,23 @@
             src: url(fonts/AmazonEmber.ttf);
         }
 
-            @font-face {
-                font-family: "Choko";
-                src: url(fonts/Chokokutai-Regular.ttf);
-            }
+        @font-face {
+            font-family: "Choko";
+            src: url(fonts/Chokokutai-Regular.ttf);
+        }
 
-            h1 {
-                font-size: 50px;
-                font-family: "Choko";
-                color: white;
-            }
+        h1 {
+            font-size: 50px;
+            font-family: "Choko";
+            color: white;
+        }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
+
         #back-to-top {
             position: fixed;
             bottom: 20px;
@@ -42,7 +42,7 @@
             font-size: 18px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             cursor: pointer;
-            display: none; 
+            display: none;
             z-index: 1000;
         }
 
@@ -51,179 +51,179 @@
         }
 
 
-            body,
-            html {
-                height: 100%;
-            }
+        body,
+        html {
+            height: 100%;
+        }
 
-            body {
-                font-family: Arial, sans-serif;
-                background-color: #191970;
-                color: black;
-                display: flex;
-                flex-direction: column;
-            }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #191970;
+            color: black;
+            display: flex;
+            flex-direction: column;
+        }
 
-            header {
-                background-color: #4169E1;
-                color: white;
-                padding: 20px;
-                text-align: center;
-            }
+        header {
+            background-color: #4169E1;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
 
-            nav {
-                background-color: #800020;
-                padding: 10px;
-                text-align: center;
-            }
+        nav {
+            background-color: #800020;
+            padding: 10px;
+            text-align: center;
+        }
 
-            nav ul {
-                list-style: none;
-            }
+        nav ul {
+            list-style: none;
+        }
 
-            nav ul li {
-                display: inline;
-                margin-right: 15px;
-            }
+        nav ul li {
+            display: inline;
+            margin-right: 15px;
+        }
 
-            nav ul li a {
-                color: white;
-                text-decoration: none;
-                font-weight: bold;
-            }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
 
-            nav ul li a:hover {
-                text-decoration: underline;
-            }
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
 
-            .content {
-                flex: 1;
-                padding: 20px;
-            }
+        .content {
+            flex: 1;
+            padding: 20px;
+        }
 
-            section {
-                padding: 20px;
-                margin: 20px;
-                background-color: #f5f5f5;
-                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            }
+        section {
+            padding: 20px;
+            margin: 20px;
+            background-color: #f5f5f5;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
 
-            h2 {
-                color: darkred;
-                border-bottom: 2px solid #4169E1;
-                padding-bottom: 5px;
-            }
+        h2 {
+            color: darkred;
+            border-bottom: 2px solid #4169E1;
+            padding-bottom: 5px;
+        }
 
-            article {
-                display: flex;
-                align-items: flex-start;
-                margin-bottom: 20px;
-            }
+        article {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
 
-            article img {
-                width: 150px;
-                height: 220px;
-                margin-right: 20px;
-            }
+        article img {
+            width: 150px;
+            height: 220px;
+            margin-right: 20px;
+        }
 
-            article div {
-                max-width: 600px;
-                color: darkred;
-            }
-
-
-            footer {
-                background-color: #191970;
-                color: white;
-                text-align: center;
-                padding: 10px;
-            }
-
-            footer a {
-                color: white;
-                text-decoration: none;
-            }
-
-            footer a:hover {
-                text-decoration: underline;
-            }
+        article div {
+            max-width: 600px;
+            color: darkred;
+        }
 
 
-            .movie-list,
-            .tv-show-list,
-            .celeb-list {
-                display: flex;
-                flex-wrap: wrap;
-                gap: 20px;
-            }
+        footer {
+            background-color: #191970;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
 
-            .movie,
-            .tv-show,
-            .celeb {
-                background-color: #fff;
-                padding: 10px;
-                border: 1px solid #800020;
-                width: 200px;
-                text-align: center;
-                color: darkred;
-            }
+        footer a {
+            color: white;
+            text-decoration: none;
+        }
 
-            .movie img,
-            .tv-show img,
-            .celeb img {
-                width: 100%;
-                height: auto;
-                margin-bottom: 10px;
-            }
+        footer a:hover {
+            text-decoration: underline;
+        }
 
-            .movie:hover,
-            .tv-show:hover,
-            .celeb:hover {
-                background-color: #4169E1;
-                transition: background-color 0.3s ease;
-            }
 
-            .contact-popup {
-                display: none;
-                position: fixed;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                background-color: white;
-                padding: 20px;
-                box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-                z-index: 10;
-                border-radius: 8px;
-                width: 300px;
-            }
+        .movie-list,
+        .tv-show-list,
+        .celeb-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
 
-            .contact-popup h2 {
-                color: #800020;
-                margin-bottom: 10px;
-            }
+        .movie,
+        .tv-show,
+        .celeb {
+            background-color: #fff;
+            padding: 10px;
+            border: 1px solid #800020;
+            width: 200px;
+            text-align: center;
+            color: darkred;
+        }
 
-            .contact-popup input,
-            .contact-popup textarea {
-                width: 100%;
-                padding: 10px;
-                margin-bottom: 10px;
-                border: 1px solid #4169E1;
-                border-radius: 5px;
-            }
+        .movie img,
+        .tv-show img,
+        .celeb img {
+            width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+        }
 
-            .contact-popup button {
-                background-color: #4169E1;
-                color: white;
-                border: none;
-                padding: 10px;
-                cursor: pointer;
-                border-radius: 5px;
-                transition: background-color 0.3s;
-            }
+        .movie:hover,
+        .tv-show:hover,
+        .celeb:hover {
+            background-color: #4169E1;
+            transition: background-color 0.3s ease;
+        }
 
-            .contact-popup button:hover {
-                background-color: #800020;
-            }
+        .contact-popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            z-index: 10;
+            border-radius: 8px;
+            width: 300px;
+        }
+
+        .contact-popup h2 {
+            color: #800020;
+            margin-bottom: 10px;
+        }
+
+        .contact-popup input,
+        .contact-popup textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #4169E1;
+            border-radius: 5px;
+        }
+
+        .contact-popup button {
+            background-color: #4169E1;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .contact-popup button:hover {
+            background-color: #800020;
+        }
 
         .overlay {
             display: none;
@@ -240,6 +240,75 @@
             color: #800020;
             font-size: 25px;
             font-weight: bold;
+        }
+
+        .movie-list {
+            display: flex;
+            flex-wrap: nowrap;
+            overflow-x: auto;
+            gap: 20px;
+            padding-bottom: 10px;
+        }
+
+        .movie-list {
+            display: flex;
+            flex-wrap: nowrap;
+            overflow-x: auto;
+            gap: 20px;
+            padding-bottom: 10px;
+            scroll-snap-type: x mandatory;
+        }
+
+        .movie {
+            scroll-snap-align: start;
+            flex-shrink: 0;
+        }
+
+        .tv-show-list {
+            display: flex;
+            flex-wrap: nowrap;
+            overflow-x: auto;
+            gap: 20px;
+            padding-bottom: 10px;
+            scroll-snap-type: x mandatory;
+        }
+
+        .tv-show {
+            scroll-snap-align: start;
+            flex-shrink: 0;
+        }
+
+        .celeb-list {
+            display: flex;
+            flex-wrap: nowrap;
+            overflow-x: auto;
+            gap: 20px;
+            padding-bottom: 10px;
+            scroll-snap-type: x mandatory;
+        }
+
+        .celeb {
+            scroll-snap-align: start;
+            flex-shrink: 0;
+        }
+
+        .movie-list::-webkit-scrollbar,
+        .tv-show-list::-webkit-scrollbar,
+        .celeb-list::-webkit-scrollbar {
+            height: 8px; 
+        }
+
+        .movie-list::-webkit-scrollbar-thumb,
+        .tv-show-list::-webkit-scrollbar-thumb,
+        .celeb-list::-webkit-scrollbar-thumb {
+            background-color: #4169E1;
+            border-radius: 10px;
+        }
+
+        .movie-list::-webkit-scrollbar-track,
+        .tv-show-list::-webkit-scrollbar-track,
+        .celeb-list::-webkit-scrollbar-track {
+            background: #f1f1f1;
         }
     </style>
 </head>
@@ -264,7 +333,7 @@
         <section id="featured">
             <h2>Featured Movie</h2>
             <article id="featured-movie">
-            </section>
+        </section>
         <section id="movies">
             <h2>Popular Movies</h2>
             <div class="movie-list">
@@ -359,69 +428,114 @@
                     <h3>Stranger Things (2016–2025)</h3>
                     <p>A small town uncovers a mystery involving supernatural forces.</p>
                 </div>
+                <div class="tv-show">
+                    <img src="https://m.media-amazon.com/images/M/MV5BMTQ5MDU5MTktMDZkMy00NDU1LWIxM2UtODg5OGFiNmRhNDBjXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg"
+                        alt="The Witcher Poster">
+                    <h3>The Witcher (2019–Present)</h3>
+                    <p>Based on the book series, a monster hunter navigates political intrigue and personal struggles in
+                        a fantasy world.</p>
+                </div>
+                <div class="tv-show">
+                    <img src="https://m.media-amazon.com/images/M/MV5BODcyODZlZDMtZGE0Ni00NjBhLWJlYTAtZDdlNWY3MzkwMGVhXkEyXkFqcGc@._V1_.jpg"
+                        alt="The Crown Poster">
+                    <h3>The Crown (2016–2023)</h3>
+                    <p>A historical drama about the reign of Queen Elizabeth II and the challenges she faced as a
+                        monarch.</p>
+                </div>
+                <div class="tv-show">
+                    <img src="https://m.media-amazon.com/images/M/MV5BZjQwYzBlYzUtZjhhOS00ZDQ0LWE0NzAtYTk4MjgzZTNkZWEzXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg"
+                        alt="The Office Poster">
+                    <h3>The Office (2005–2013)</h3>
+                    <p>A mockumentary-style comedy series set in a mundane office environment, exploring the quirky
+                        lives of employees.</p>
+                </div>
+                <div class="tv-show">
+                    <img src="https://m.media-amazon.com/images/M/MV5BM2ZiNThlNzItNmY3Ny00NjA2LWJlMjItNTk1NDI3MDMyMTk4XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg"
+                        alt="Peaky Blinders Poster">
+                    <h3>Peaky Blinders (2013–2022)</h3>
+                    <p>A gripping crime drama following a post-World War I gang in Birmingham, England, led by Thomas
+                        Shelby.</p>
+                </div>
             </div>
-    </div>
-    </section>
-    <section id="celebrities">
-        <h2>Popular Celebrities</h2>
-        <div class="celeb-list">
-            <div class="celeb"> <img
-                    src="https://m.media-amazon.com/images/M/MV5BMjI0MTg3MzI0M15BMl5BanBnXkFtZTcwMzQyODU2Mw@@._V1_FMjpg_UX1000_.jpg    "
-                    alt="Leonardo DiCaprio">
-                <h3>Leonardo DiCaprio</h3>
-                <p>Known for: Inception, Titanic, The Revenant</p>
-            </div>
-            <div class="celeb"> <img
-                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Meryl_Streep_December_2018_%28cropped%29.jpg/800px-Meryl_Streep_December_2018_%28cropped%29.jpg"
-                    alt="Meryl Streep">
-                <h3>Meryl Streep</h3>
-                <p>Known for: The Devil Wears Prada, Mamma Mia!, The Iron Lady</p>
-            </div>
-            <div class="celeb"> <img
-                    src="https://m.media-amazon.com/images/M/MV5BNzg1MTUyNDYxOF5BMl5BanBnXkFtZTgwNTQ4MTE2MjE@._V1_.jpg"
-                    alt="Robert Downey Jr.">
-                <h3>Robert Downey Jr.</h3>
-                <p>Known for: Iron Man, Sherlock Holmes, Avengers: Endgame</p>
-            </div>
-            <div class="celeb"> <img
-                    src="https://upload.wikimedia.org/wikipedia/commons/4/46/Johnny_Depp_%28July_2009%29_2_cropped.jpg"
-                    alt="Johnny Depp.">
-                <h3>Johnny Depp</h3>
-                <p>A versatile actor celebrated for his eccentric roles in films such as Pirates of the Caribbean and
-                    Edward Scissorhands.</p>
-            </div>
-            <div class="celeb"> <img
-                    src="https://m.media-amazon.com/images/M/MV5BMTQwMjAwNzI0M15BMl5BanBnXkFtZTcwOTY1MTMyOQ@@._V1_.jpg"
-                    alt="Jim Carrey">
+        </section>
+        <section id="celebrities">
+            <h2>Popular Celebrities</h2>
+            <div class="celeb-list">
+                <div class="celeb"> <img
+                        src="https://m.media-amazon.com/images/M/MV5BMjI0MTg3MzI0M15BMl5BanBnXkFtZTcwMzQyODU2Mw@@._V1_FMjpg_UX1000_.jpg    "
+                        alt="Leonardo DiCaprio">
+                    <h3>Leonardo DiCaprio</h3>
+                    <p>Known for: Inception, Titanic, The Revenant</p>
+                </div>
+                <div class="celeb"> <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Meryl_Streep_December_2018_%28cropped%29.jpg/800px-Meryl_Streep_December_2018_%28cropped%29.jpg"
+                        alt="Meryl Streep">
+                    <h3>Meryl Streep</h3>
+                    <p>Known for: The Devil Wears Prada, Mamma Mia!, The Iron Lady</p>
+                </div>
+                <div class="celeb"> <img
+                        src="https://m.media-amazon.com/images/M/MV5BNzg1MTUyNDYxOF5BMl5BanBnXkFtZTgwNTQ4MTE2MjE@._V1_.jpg"
+                        alt="Robert Downey Jr.">
+                    <h3>Robert Downey Jr.</h3>
+                    <p>Known for: Iron Man, Sherlock Holmes, Avengers: Endgame</p>
+                </div>
+                <div class="celeb"> <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/4/46/Johnny_Depp_%28July_2009%29_2_cropped.jpg"
+                        alt="Johnny Depp.">
+                    <h3>Johnny Depp</h3>
+                    <p>A versatile actor celebrated for his eccentric roles in films such as Pirates of the Caribbean
+                        and
+                        Edward Scissorhands.</p>
+                </div>
+                <div class="celeb"> <img
+                        src="https://m.media-amazon.com/images/M/MV5BMTQwMjAwNzI0M15BMl5BanBnXkFtZTcwOTY1MTMyOQ@@._V1_.jpg"
+                        alt="Jim Carrey">
                     <a href="jimcarrey.html">Jim Carrey</a>
-                <p>A comedic actor renowned for his energetic performances in films like Ace Ventura: Pet Detective and
-                    The Truman Show.</p>
+                    <p>A comedic actor renowned for his energetic performances in films like Ace Ventura: Pet Detective
+                        and
+                        The Truman Show.</p>
+                </div>
+                <div class="celeb"> <img
+                        src="https://m.media-amazon.com/images/M/MV5BMTc0MDMyMzI2OF5BMl5BanBnXkFtZTcwMzM2OTk1MQ@@._V1_FMjpg_UX1000_.jpg"
+                        alt="Morgan Freeman">
+                    <h3>Morgan Freeman</h3>
+                    <p>An acclaimed actor and narrator known for his distinctive voice and roles in films like The
+                        Shawshank
+                        Redemption and Driving Miss Daisy.</p>
+                </div>
+                <div class="celeb"> <img
+                        src="https://m.media-amazon.com/images/M/MV5BMTQzNjU3MDczN15BMl5BanBnXkFtZTYwNzY2Njc4._V1_FMjpg_UX1000_.jpg"
+                        alt="Julia Roberts">
+                    <h3>Julia Roberts</h3>
+                    <p>Julia Roberts is an Academy Award-winning actress known for her roles in films like Pretty Woman,
+                        Erin Brockovich, and Notting Hill.</p>
+                </div>
+                <div class="celeb">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Brad_Pitt-69858.jpg/800px-Brad_Pitt-69858.jpg"
+                        alt="Brad Pitt">
+                    <h3>Brad Pitt</h3>
+                    <p>Known for: Fight Club, Once Upon a Time in Hollywood, Ocean's Eleven</p>
+                </div>
+                <div class="celeb">
+                    <img src="https://m.media-amazon.com/images/M/MV5BMTc1MDI0MDg1NV5BMl5BanBnXkFtZTgwMDM3OTAzMTE@._V1_.jpg"
+                        alt="Cate Blanchett">
+                    <h3>Cate Blanchett</h3>
+                    <p>Known for: Blue Jasmine, The Lord of the Rings, Carol</p>
+                </div>
+                <div class="celeb">
+                    <img src="https://m.media-amazon.com/images/M/MV5BMTQ2MjMwNDA3Nl5BMl5BanBnXkFtZTcwMTA2NDY3NQ@@._V1_FMjpg_UX1000_.jpg"
+                        alt="Tom Hanks">
+                    <h3>Tom Hanks</h3>
+                    <p>Known for: Forrest Gump, Cast Away, Saving Private Ryan</p>
+                </div>
             </div>
-            <div class="celeb"> <img
-                    src="https://m.media-amazon.com/images/M/MV5BMTc0MDMyMzI2OF5BMl5BanBnXkFtZTcwMzM2OTk1MQ@@._V1_FMjpg_UX1000_.jpg"
-                    alt="Morgan Freeman">
-                <h3>Morgan Freeman</h3>
-                <p>An acclaimed actor and narrator known for his distinctive voice and roles in films like The Shawshank
-                    Redemption and Driving Miss Daisy.</p>
-            </div>
-            <div class="celeb"> <img
-                    src="https://m.media-amazon.com/images/M/MV5BMTQzNjU3MDczN15BMl5BanBnXkFtZTYwNzY2Njc4._V1_FMjpg_UX1000_.jpg"
-                    alt="Julia Roberts">
-                <h3>Julia Roberts</h3>
-                <p>Julia Roberts is an Academy Award-winning actress known for her roles in films like Pretty Woman,
-                    Erin Brockovich, and Notting Hill.</p>
-            </div>
-        </div>
-        <button id="back-to-top" title="Go to top">↑</button>
-
-    </section>
-
     </div>
-
+    <button id="back-to-top" title="Go to top">↑</button>
+    </section>
+    </div>
     <footer>
         <p>© 2024 Fylmyki.</p>
     </footer>
-
     <script>
         const featuredMovies = [
             {
@@ -490,7 +604,7 @@
                     </div>
                 `;
         }
-        
+
 
         window.onload = displayFeaturedMovie;
 
