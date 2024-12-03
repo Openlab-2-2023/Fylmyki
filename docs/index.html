@@ -325,7 +325,7 @@
             <li><a href="#movies">Movies</a></li>
             <li><a href="#tvshows">TV Shows</a></li>
             <li><a href="#celebrities">Celebrities</a></li>
-            <li><a href="#contact">Contact Us</a></li>
+            <li><a href="#" onclick="openContact()">Contact Us</a></li>
         </ul>
     </nav>
 
@@ -530,6 +530,17 @@
                 </div>
             </div>
     </div>
+    <div class="overlay" id="overlay" onclick="closeContact()"></div>
+    <div class="contact-popup" id="contactPopup">
+        <h2>Contact Us</h2>
+        <form>
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" rows="4" required></textarea>
+            <button type="submit">Send</button>
+            <button type="button" onclick="closeContact()">Close</button>
+        </form>
+    </div>
     <button id="back-to-top" title="Go to top">↑</button>
     </section>
     </div>
@@ -537,6 +548,15 @@
         <p>© 2024 Fylmyki.</p>
     </footer>
     <script>
+        function openContact() {
+            document.getElementById('contactPopup').style.display = 'block';
+            document.getElementById('overlay').style.display = 'block';
+        }
+
+        function closeContact() {
+            document.getElementById('contactPopup').style.display = 'none';
+            document.getElementById('overlay').style.display = 'none';
+        }
         const featuredMovies = [
             {
                 title: "Fight Club(1999)",
