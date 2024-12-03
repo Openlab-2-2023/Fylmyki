@@ -295,7 +295,7 @@
         .movie-list::-webkit-scrollbar,
         .tv-show-list::-webkit-scrollbar,
         .celeb-list::-webkit-scrollbar {
-            height: 8px; 
+            height: 8px;
         }
 
         .movie-list::-webkit-scrollbar-thumb,
@@ -310,36 +310,50 @@
         .celeb-list::-webkit-scrollbar-track {
             background: #f1f1f1;
         }
-    
-    @media only screen and (max-width: 768px) {
-    body {
-        font-size: 16px;
-        padding: 10px;
-    }
 
-    .tv-shows, .celeb {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
+        @media only screen and (max-width: 100%) {
+            body {
+                font-size: 14px;
+                padding: 10px;
+            }
 
-    .tv-show, .celeb {
-        margin-bottom: 20px;
-        text-align: center;
-    }
+            .tv-shows,
+            .celeb {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
 
-    img {
-        width: 100%;
-        height: auto;
-        max-width: 300px;
-    }
+            .tv-show,
+            .celeb {
+                margin-bottom: 20px;
+                text-align: center;
+            }
 
-    #contactPopup, #overlay {
-        width: 100%;
-        height: auto;
-    }
-}
+            img {
+                width: 100%;
+                height: auto;
+                max-width: 300px;
+            }
 
+            #contactPopup,
+            #overlay {
+                width: 100%;
+                height: auto;
+            }
+        }
+        @media (min-width: 0px) and (max-width: 768px) {
+
+            #featured-movie {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            #featured-movie img {
+                margin-bottom: 20px;
+            }
+        }
+        
     </style>
 </head>
 
