@@ -181,34 +181,34 @@
         }
 
         .movie-list {
-    display: flex;
-    justify-content: left; 
-    gap: 10px; 
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    padding: 10px 0;
-}
+            display: flex;
+            justify-content: left;
+            gap: 10px;
+            flex-wrap: nowrap;
+            overflow-x: auto;
+            padding: 10px 0;
+        }
 
-.movie {
-    text-align: center;
-    flex: 0 0 auto; 
-    width: 150px;
-}
+        .movie {
+            text-align: center;
+            flex: 0 0 auto;
+            width: 150px;
+        }
 
-.movie img {
-    width: 150px;
-    height: auto;
-    border: 2px solid #800020;
-    border-radius: 10px;
-}
+        .movie img {
+            width: 150px;
+            height: auto;
+            border: 2px solid #800020;
+            border-radius: 10px;
+        }
 
-.movie p {
-    margin-top: 5px;
-    font-weight: bold;
-    color: #800020;
-}
+        .movie p {
+            margin-top: 5px;
+            font-weight: bold;
+            color: #800020;
+        }
 
-#back-to-top {
+        #back-to-top {
             position: fixed;
             bottom: 20px;
             right: 20px;
@@ -220,7 +220,7 @@
             font-size: 18px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             cursor: pointer;
-            display: none; 
+            display: none;
             z-index: 1000;
         }
 
@@ -228,6 +228,26 @@
             background-color: #800020;
         }
 
+        .movie-list {
+            display: flex;
+            justify-content: left;
+            gap: 10px;
+            flex-wrap: wrap;
+            padding: 10px 0;
+        }
+
+        @media (max-width: 768px) {
+            .movie-list {
+                overflow-x: auto;
+                flex-wrap: nowrap;
+                gap: 15px;
+            }
+
+            .movie {
+                flex: 0 0 auto;
+                width: 150px;
+            }
+        }
     </style>
 </head>
 
@@ -251,11 +271,16 @@
         <section id="about-jim">
             <h2>About Jim Carrey</h2>
             <article>
-                <img src="https://m.media-amazon.com/images/M/MV5BMTQwMjAwNzI0M15BMl5BanBnXkFtZTcwOTY1MTMyOQ@@._V1_FMjpg_UX1000_.jpg" alt="Jim Carrey">
+                <img src="https://m.media-amazon.com/images/M/MV5BMTQwMjAwNzI0M15BMl5BanBnXkFtZTcwOTY1MTMyOQ@@._V1_FMjpg_UX1000_.jpg"
+                    alt="Jim Carrey">
                 <div>
                     <h3>Jim Carrey</h3>
-                    <p>Jim Carrey is a Canadian-American actor, comedian, writer, and artist renowned for his exceptional comedic timing and dynamic performances. With his unique blend of physical comedy and emotional depth, he has won the hearts of audiences worldwide.</p>
-                    <p>From iconic roles in movies like *The Mask*, *Ace Ventura*, and *Bruce Almighty* to deeply moving performances in films like *The Truman Show* and *Eternal Sunshine of the Spotless Mind*, Jim Carrey is a versatile artist who continues to inspire creativity and laughter.</p>
+                    <p>Jim Carrey is a Canadian-American actor, comedian, writer, and artist renowned for his
+                        exceptional comedic timing and dynamic performances. With his unique blend of physical comedy
+                        and emotional depth, he has won the hearts of audiences worldwide.</p>
+                    <p>From iconic roles in movies like *The Mask*, *Ace Ventura*, and *Bruce Almighty* to deeply moving
+                        performances in films like *The Truman Show* and *Eternal Sunshine of the Spotless Mind*, Jim
+                        Carrey is a versatile artist who continues to inspire creativity and laughter.</p>
                 </div>
             </article>
         </section>
@@ -264,31 +289,38 @@
             <h2>Notable Works</h2>
             <div class="movie-list">
                 <div class="movie">
-                    <img src="https://m.media-amazon.com/images/M/MV5BOWU1M2Q5MDgtOTkxZS00NjdmLWFlNWEtOGEyOTNlNGYyYTZlXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Ace Ventura: Pet Detective">
+                    <img src="https://m.media-amazon.com/images/M/MV5BOWU1M2Q5MDgtOTkxZS00NjdmLWFlNWEtOGEyOTNlNGYyYTZlXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg"
+                        alt="Ace Ventura: Pet Detective">
                     <p>Ace Ventura: Pet Detective</p>
                 </div>
                 <div class="movie">
-                    <img src="https://m.media-amazon.com/images/M/MV5BNGNmNjI0ZmMtMzI5MC00ZjUyLWFlZDEtYjUyMGZlN2E3N2E2XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="The Mask">
+                    <img src="https://m.media-amazon.com/images/M/MV5BNGNmNjI0ZmMtMzI5MC00ZjUyLWFlZDEtYjUyMGZlN2E3N2E2XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg"
+                        alt="The Mask">
                     <p>The Mask</p>
                 </div>
                 <div class="movie">
-                    <img src="https://m.media-amazon.com/images/M/MV5BNGQxZDA1MmMtYWQ1Ni00NTJmLTljMjgtZWVmODllODVhMzgyXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Dumb and Dumber">
+                    <img src="https://m.media-amazon.com/images/M/MV5BNGQxZDA1MmMtYWQ1Ni00NTJmLTljMjgtZWVmODllODVhMzgyXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg"
+                        alt="Dumb and Dumber">
                     <p>Dumb and Dumber</p>
                 </div>
                 <div class="movie">
-                    <img src="https://m.media-amazon.com/images/M/MV5BMGQ4MTk5YjctNGE5NC00ODk4LWIzOWItNzNhODc0N2JmYzMzXkEyXkFqcGc@._V1_.jpg" alt="Liar Liar">
+                    <img src="https://m.media-amazon.com/images/M/MV5BMGQ4MTk5YjctNGE5NC00ODk4LWIzOWItNzNhODc0N2JmYzMzXkEyXkFqcGc@._V1_.jpg"
+                        alt="Liar Liar">
                     <p>Liar Liar</p>
                 </div>
                 <div class="movie">
-                    <img src="https://m.media-amazon.com/images/M/MV5BNzA3ZjZlNzYtMTdjMy00NjMzLTk5ZGYtMTkyYzNiOGM1YmM3XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="The Truman Show">
+                    <img src="https://m.media-amazon.com/images/M/MV5BNzA3ZjZlNzYtMTdjMy00NjMzLTk5ZGYtMTkyYzNiOGM1YmM3XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg"
+                        alt="The Truman Show">
                     <p>The Truman Show</p>
                 </div>
                 <div class="movie">
-                    <img src="https://m.media-amazon.com/images/M/MV5BMTY4NzcwODg3Nl5BMl5BanBnXkFtZTcwNTEwOTMyMw@@._V1_FMjpg_UX1000_.jpg" alt="Eternal Sunshine of the Spotless Mind">
+                    <img src="https://m.media-amazon.com/images/M/MV5BMTY4NzcwODg3Nl5BMl5BanBnXkFtZTcwNTEwOTMyMw@@._V1_FMjpg_UX1000_.jpg"
+                        alt="Eternal Sunshine of the Spotless Mind">
                     <p>Eternal Sunshine of the Spotless Mind</p>
                 </div>
                 <div class="movie">
-                    <img src="https://m.media-amazon.com/images/M/MV5BZWM2ZjA2OTctZmRhMy00ZDIzLTkwZGQtYTRlNmQwZWZmMDBlXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Bruce Almighty">
+                    <img src="https://m.media-amazon.com/images/M/MV5BZWM2ZjA2OTctZmRhMy00ZDIzLTkwZGQtYTRlNmQwZWZmMDBlXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg"
+                        alt="Bruce Almighty">
                     <p>Bruce Almighty</p>
                 </div>
             </div>
@@ -296,13 +328,13 @@
         <section id="awards">
             <h2>Awards and Achievements</h2>
             <ul>
-                <li><strong>Golden Globe Awards:</strong> 
+                <li><strong>Golden Globe Awards:</strong>
                     <ul>
                         <li>Best Actor in a Motion Picture - Drama for *The Truman Show* (1999)</li>
                         <li>Best Actor in a Motion Picture - Musical or Comedy for *Man on the Moon* (2000)</li>
                     </ul>
                 </li>
-                <li><strong>MTV Movie & TV Awards:</strong> 
+                <li><strong>MTV Movie & TV Awards:</strong>
                     <ul>
                         <li>Best Comedic Performance for *Ace Ventura: Pet Detective* (1995)</li>
                         <li>Best Villain for *The Cable Guy* (1997)</li>
@@ -319,18 +351,18 @@
                         <li>Best Actor for *The Truman Show* (1998)</li>
                     </ul>
                 </li>
-                <li><strong>Hollywood Film Awards:</strong> 
+                <li><strong>Hollywood Film Awards:</strong>
                     <ul>
                         <li>Best Ensemble for *Eternal Sunshine of the Spotless Mind* (2004)</li>
                     </ul>
                 </li>
-                <li><strong>Teen Choice Awards:</strong> 
+                <li><strong>Teen Choice Awards:</strong>
                     <ul>
                         <li>Choice Movie Actor for *Bruce Almighty* (2003)</li>
                         <li>Choice Movie Villain for *How the Grinch Stole Christmas* (2001)</li>
                     </ul>
                 </li>
-                <li><strong>Star on the Hollywood Walk of Fame:</strong> 
+                <li><strong>Star on the Hollywood Walk of Fame:</strong>
                     <ul>
                         <li>Jim Carrey was honored with a star on the Hollywood Walk of Fame in 1996.</li>
                     </ul>
@@ -369,17 +401,17 @@
         }
         const backToTopButton = document.getElementById('back-to-top');
 
-window.onscroll = function () {
-    if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-        backToTopButton.style.display = "block";
-    } else {
-        backToTopButton.style.display = "none";
-    }
-};
+        window.onscroll = function () {
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                backToTopButton.style.display = "block";
+            } else {
+                backToTopButton.style.display = "none";
+            }
+        };
 
-backToTopButton.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-});
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
     </script>
 
 </body>
