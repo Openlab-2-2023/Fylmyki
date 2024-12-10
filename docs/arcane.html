@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arcane: League of Legends</title>
+    <style>
+        @font-face {
+            font-family: "Amazon";
+            src: url(fonts/AmazonEmber.ttf);
+        }
+
+        @font-face {
+            font-family: "Choko";
+            src: url(fonts/Chokokutai-Regular.ttf);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #191970;
+            color: black;
+            display: flex;
+            flex-direction: column;
+        }
+
+        h1 {
+            font-size: 50px;
+            font-family: "Choko";
+            color: white;
+        }
+
+        header {
+            background-color: #4169E1;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #800020;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style: none;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .content {
+            flex: 1;
+            padding: 20px;
+        }
+
+        section {
+            padding: 20px;
+            margin: 20px;
+            background-color: #f5f5f5;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: darkred;
+            border-bottom: 2px solid #4169E1;
+            padding-bottom: 5px;
+        }
+
+        article {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+
+        article img {
+            width: 150px;
+            height: 220px;
+            margin-right: 20px;
+        }
+
+        article div {
+            max-width: 600px;
+            color: darkred;
+        }
+
+        h2 {
+            color: darkred;
+            border-bottom: 2px solid #4169E1;
+            padding-bottom: 5px;
+        }
+
+        .content {
+            flex: 1;
+            padding: 20px;
+        }
+
+        .tabs {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .tab {
+            padding: 10px 20px;
+            background-color: #4169E1;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .tab.active {
+            background-color: #800020;
+        }
+
+        .season-content {
+            display: none;
+        }
+
+        .season-content.active {
+            display: block;
+        }
+
+        .episode {
+            margin: 10px 0;
+            padding: 10px;
+            background-color: white;
+            border: 1px solid #ccc;
+            display: flex;
+            align-items: flex-start;
+            border-radius: 8px;
+        }
+
+        .episode img {
+            width: 100px;
+            height: auto;
+            margin-right: 20px;
+            border-radius: 5px;
+        }
+
+        .episode-content {
+            flex: 1;
+        }
+
+        .episode-content h4 {
+            color: darkred;
+            margin-bottom: 5px;
+        }
+
+        .trailer iframe {
+            width: 100%;
+            max-width: 900px;
+            height: 500px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        footer {
+            background-color: #191970;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+
+        .contact-popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            z-index: 10;
+            border-radius: 8px;
+            width: 300px;
+        }
+
+        .contact-popup h2 {
+            color: #800020;
+            margin-bottom: 10px;
+        }
+
+        .contact-popup input,
+        .contact-popup textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #4169E1;
+            border-radius: 5px;
+        }
+
+        .contact-popup button {
+            background-color: #4169E1;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .contact-popup button:hover {
+            background-color: #800020;
+        }
+
+        a {
+            color: #800020;
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        .stars {
+            display: flex;
+            gap: 5px;
+            font-size: 40px;
+            color: #ffd700;
+            cursor: pointer;
+        }
+
+        .stars i {
+            pointer-events: none;
+        }
+
+        .stars .filled {
+            color: #ffd700;
+        }
+
+        .stars .empty {
+            color: #ccc;
+        }
+
+
+        #back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #4169E1;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 50%;
+            font-size: 18px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            display: none;
+            z-index: 1000;
+        }
+
+        p {
+            font-size: 15px;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 36px;
+            }
+
+            nav ul li {
+                margin-right: 10px;
+            }
+
+            .poster img {
+                max-width: 200px;
+            }
+
+            .trailer iframe {
+                height: 400px;
+            }
+
+            .tabs {
+                flex-wrap: wrap;
+                gap: 5px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 28px;
+            }
+
+            .poster img {
+                max-width: 150px;
+            }
+
+            .episode img {
+                width: 80px;
+            }
+
+            .trailer iframe {
+                height: 300px;
+            }
+        }
+
+        section img {
+            width: 150px;
+            height: 220px;
+            margin-right: 20px;
+        }
+
+        .episode img {
+            height: 100px;
+            width: 175px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Arcane: League of Legends</h1>
+        <p>Exploring the origins of your favorite champions!</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#overview">Overview</a></li>
+            <li><a href="#seasons">Seasons</a></li>
+            <li><a href="#trailer">Trailer</a></li>
+            <li><a href="#"onclick="openContact()">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <div class="content">
+        <section id="movie-details">
+            <h2>About Arcane (2021-2024)</h2>
+            <article>
+                <img src="https://assets-prd.ignimgs.com/2024/06/03/arcane-season-2-poster-1717410264983.jpeg       "
+                    alt="Arcane">
+                <div>
+                    <p>Set in the divided world of Piltover and Zaun, Arcane explores the origins of League of Legends
+                        champions like Vi and Jinx. Directed by Pascal Charrue and Arnaud Delord, the 2021 animated
+                        series follows the two sisters caught in the tension between a city of progress and its
+                        oppressed underbelly. As science and magic collide, Arcane delves into themes of family,
+                        betrayal, and personal conflict, with stunning animation and rich character development. A
+                        thrilling blend of action, drama, and heart, Arcane brings the League of Legends universe to
+                        life in an unforgettable way.</p>
+                    <p><strong>Director:</strong> Pascal Charrue</p>
+                    <p><strong>Stars:</strong>Kevin Alejandro , Hailee Steinfeld , Ella Purnell</p>
+
+                    <h3>Rate this Movie:</h3>
+                    <div class="stars" id="starRating">
+                        <span class="empty">&#9734;</span>
+                        <span class="empty">&#9734;</span>
+                        <span class="empty">&#9734;</span>
+                        <span class="empty">&#9734;</span>
+                        <span class="empty">&#9734;</span>
+                    </div>
+                    <p id="ratingValue">Rating: 0/5</p>
+                </div>
+            </article>
+        </section>
+
+        <section id="seasons">
+            <h2>Seasons</h2>
+            <div class="tabs">
+                <div class="tab active" onclick="showSeason(1)">Season 1</div>
+                <div class="tab" onclick="showSeason(2)">Season 2</div>
+            </div>
+
+            <div id="season1" class="season-content active">
+                <h3>Season 1</h3>
+                <div class="episode">
+                    <img src="https://cdn.mos.cms.futurecdn.net/ycueoe3wgpDLUsx9r4hxsU.jpg" alt="Episode 1 Thumbnail">
+                    <div class="episode-content">
+                        <h4>Episode 1: Welcome to the Playground</h4>
+                        <p><strong>Air Date:</strong> November 6, 2021</p>
+                        <p>Two sisters navigate Piltover's underworld and encounter a game-changing discovery.</p>
+                    </div>
+                </div>
+                <div class="episode">
+                    <img src="https://s1.dmcdn.net/v/TSqAI1Yc7UmGMGqeB/x1080" alt="Episode 2 Thumbnail">
+                    <div class="episode-content">
+                        <h4>Episode 2: Some Mysteries Are Better Left Unsolved</h4>
+                        <p><strong>Air Date:</strong> November 6, 2021</p>
+                        <p>Jayce's experiments spark intrigue as tensions rise in Piltover's council.</p>
+                    </div>
+                </div>
+                <div class="episode">
+                    <img src="https://cdn.mos.cms.futurecdn.net/ybhbte4CnUvusKHW7kdvHd.jpg" alt="Episode 3 Thumbnail">
+                    <div class="episode-content">
+                        <h4>Episode 3: The Base Violence Necessary for Change</h4>
+                        <p><strong>Air Date:</strong> November 6, 2021</p>
+                        <p>A dramatic showdown alters the future of Vi, Powder, and their allies forever.</p>
+                    </div>
+                </div>
+                <div class="episode">
+                    <img src="https://cdn.mos.cms.futurecdn.net/CmJTWXuHcnUuXqun9BwhK6.jpg" alt="Episode 4 Thumbnail">
+                    <div class="episode-content">
+                        <h4>Episode 4: Happy Progress Day!</h4>
+                        <p><strong>Air Date:</strong> November 13, 2021</p>
+                        <p>Piltover celebrates innovation while tensions with Zaun quietly simmer.</p>
+                    </div>
+                </div>
+                <div class="episode">
+                    <img src="https://cdn.mos.cms.futurecdn.net/jdvxH64n87Nbn4uTWaC834.jpg" alt="Episode 5 Thumbnail">
+                    <div class="episode-content">
+                        <h4>Episode 5: Everybody Wants to Be My Enemy</h4>
+                        <p><strong>Air Date:</strong> November 13, 2021</p>
+                        <p>Jinx emerges from the shadows, and her chaotic influence begins to take shape.</p>
+                    </div>
+                </div>
+                <div class="episode">
+                    <img src="https://cdn.mos.cms.futurecdn.net/XwiForXCsjKjbj9AjdnEj.jpg" alt="Episode 6 Thumbnail">
+                    <div class="episode-content">
+                        <h4>Episode 6: When These Walls Come Tumbling Down</h4>
+                        <p><strong>Air Date:</strong> November 13, 2021</p>
+                        <p>Vi seeks allies to confront the growing threat posed by Silco and his forces.</p>
+                    </div>
+                </div>
+                <div class="episode">
+                    <img src="https://i0.wp.com/www.screenspy.com/wp-content/uploads/2022/03/FireShot-Pro-Webpage-Screenshot-105-Netflix-www.netflix.com_.png?ssl=1"
+                        alt="Episode 7 Thumbnail">
+                    <div class="episode-content">
+                        <h4>Episode 7: The Boy Savior</h4>
+                        <p><strong>Air Date:</strong> November 20, 2021</p>
+                        <p>Echo's leadership inspires hope, but the conflict threatens to spiral out of control.</p>
+                    </div>
+                </div>
+                <div class="episode">
+                    <img src="data:image/jpeg;base64,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
+                    " alt="Episode 8 Thumbnail">
+                    <div class="episode-content">
+                        <h4>Episode 8: Oil and Water</h4>
+                        <p><strong>Air Date:</strong> November 20, 2021</p>
+                        <p>Jinx forces Vi into a perilous reunion that tests their fractured bond.</p>
+                    </div>
+                </div>
+                <div class="episode">
+                    <img src="https://i0.wp.com/www.screenspy.com/wp-content/uploads/2022/03/FireShot-Pro-Webpage-Screenshot-135-Netflix-www.netflix.com_.png?ssl=1 " alt="Episode 9 Thumbnail">
+                    <div class="episode-content">
+                        <h4>Episode 9: The Monster You Created</h4>
+                        <p><strong>Air Date:</strong> November 20, 2021</p>
+                        <p>Explosive decisions in the finale ignite a path toward war between Piltover and Zaun.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="season2" class="season-content">
+                <h3>Season 2</h3>
+                <div class="episode">
+                    <img src="https://static0.gamerantimages.com/wordpress/wp-content/uploads/2024/11/arcane-season-2-episode-1-7.jpg" alt="Episode 1 Thumbnail">
+                    <div class="episode-content">
+                        <h4>Episode 1: Heavy Is the Crown</h4>
+                        <p><strong>Air Date:</strong> November 8, 2024</p>
+                        <p>Vi and Caitlyn wrestle with how best to respond in the wake of a terrible tragedy that claims
+                            lives and escalates tensions between the twin cities.</p>
+                    </div>
+                </div>
+
+                <div class="episode">
+                    <img src="https://wiki.leagueoflegends.com/en-us/images/Arcane_2x02_Watch_it_All_Burn.jpg?48410" alt="Episode 2 Thumbnail">
+                    <div class="episode-content">
+                        <h4>Episode 2: Watch It All Burn</h4>
+                        <p><strong>Air Date:</strong> November 8, 2024</p>
+                        <p>With Piltover ready for war, the Undercity weighs its options. Jinx lies low and plots her
+                            next move. A pivotal conversation takes place.</p>
+                    </div>
+                </div>
+
+                <div class="episode">
+                    <img src="https://static0.gamerantimages.com/wordpress/wp-content/uploads/2024/11/arcane-season-2-episode-3-14.jpg" alt="Episode 3 Thumbnail">
+                    <div class="episode-content">
+                        <h4>Episode 3: Finally Got the Name Right</h4>
+                        <p><strong>Air Date:</strong> November 8, 2024</p>
+                        <p>Caitlyn doubles down on her hunt for Jinx. Ambessa accepts a fateful meeting. Changes in Zaun
+                            lead to a shocking discovery.</p>
+                    </div>
+                </div>
+
+                <div class="episode">
+                    <img src="https://wiki.leagueoflegends.com/en-us/images/Arcane_2x04_Paint_The_Town_Blue.jpg?8b763" alt="Episode 4 Thumbnail">
+                    <div class="episode-content">
+                        <h4>Episode 4: Paint the Town Blue</h4>
+                        <p><strong>Air Date:</strong> November 15, 2024</p>
+                        <p>As rumors of Jinx's return swirl, Ambessa pursues her target with renewed enthusiasm. Jinx
+                            and Sevika go undercover and into the belly of the beast.</p>
+                    </div>
+                </div>
+
+                <div class="episode">
+                    <img src="https://wiki.leagueoflegends.com/en-us/images/Arcane_2x05_Blisters_And_Bedrock.jpg?caf40" alt="Episode 5 Thumbnail">
+                    <div class="episode-content">
+                        <h4>Episode 5: Blisters and Bedrock</h4>
+                        <p><strong>Air Date:</strong> November 15, 2024</p>
+                        <p>Vi awakens to surprising news. An unsettling reunion isn't what it seems. Caitlyn uncovers
+                            the origins of Shimmer.</p>
+                    </div>
+                </div>
+
+                <div class="episode">
+                    <img src="https://wiki.leagueoflegends.com/en-us/images/Arcane_2x06_The_Message_Hidden_Within_The_Pattern.jpg?8f299" alt="Episode 6 Thumbnail">
+                    <div class="episode-content">
+                        <h4>Episode 6: The Message Hidden Within the Pattern</h4>
+                        <p><strong>Air Date:</strong> November 15, 2024</p>
+                        <p>Healing comes from a familiar face in an unfamiliar place. A stunning betrayal threatens to
+                            change countless lives.</p>
+                    </div>
+                </div>
+
+                <div class="episode">
+                    <img src="https://static0.gamerantimages.com/wordpress/wp-content/uploads/2024/11/arcane-season-2-episode-7-12.jpg" alt="Episode 7 Thumbnail">
+                    <div class="episode-content">
+                        <h4>Episode 7: Pretend Like It's the First Time</h4>
+                        <p><strong>Air Date:</strong> November 22, 2024</p>
+                        <p>A moment of darkness, a moment of light - and a vision of what could have been.</p>
+                    </div>
+                </div>
+
+                <div class="episode">
+                    <img src="https://static0.gamerantimages.com/wordpress/wp-content/uploads/2024/11/arcane-season-2-episode-8-5.jpg" alt="Episode 8 Thumbnail">
+                    <div class="episode-content">
+                        <h4>Episode 8: Killing Is a Cycle</h4>
+                        <p><strong>Air Date:</strong> November 22, 2024</p>
+                        <p>A brewing storm fuels a series of startling transformations. Elsewhere, the spark of
+                            rebellion still burns.</p>
+                    </div>
+                </div>
+
+                <div class="episode">
+                    <img src="https://wiki.leagueoflegends.com/en-us/images/Arcane_2x09_The_Dirt_Under_Your_Nails.jpg?c635a" alt="Episode 9 Thumbnail">
+                    <div class="episode-content">
+                        <h4>Episode 9: The Dirt Under Your Nails</h4>
+                        <p><strong>Air Date:</strong> November 22, 2024</p>
+                        <p>Magic. Science. Power. Revenge. Destinies clash in an epic final chapter, igniting an all-out
+                            war.</p>
+                    </div>
+                </div>
+            </div>
+    </div>
+    </div>
+    </section>
+
+    <section id="trailer">
+        <h2>Trailer</h2>
+        <div class="trailer">
+            <iframe src="https://www.youtube.com/embed/fXmAurh012s" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </section>  
+    </div>
+    <button id="back-to-top" title="Go to top">↑</button>
+    <footer>
+        <p>© 2024 Arcane Fanpage. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function openContact() {
+            document.getElementById('contactPopup').style.display = 'block';
+            document.getElementById('overlay').style.display = 'block';
+        }
+
+        function closeContact() {
+            document.getElementById('contactPopup').style.display = 'none';
+            document.getElementById('overlay').style.display = 'none';
+        }
+
+        function showSeason(season) {
+            document.querySelectorAll('.tab').forEach(tab => tab.classList.remove('active'));
+            document.querySelectorAll('.season-content').forEach(content => content.classList.remove('active'));
+
+            document.querySelector(`#season${season}`).classList.add('active');
+            document.querySelector(`.tab:nth-child(${season})`).classList.add('active');
+        }
+
+
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const stars = document.querySelectorAll('.stars span');
+            const ratingValue = document.getElementById('ratingValue');
+
+            stars.forEach((star, index) => {
+                star.addEventListener('click', () => {
+                    stars.forEach((s, i) => {
+                        if (i <= index) {
+                            s.innerHTML = '&#9733;';
+                            s.classList.add('filled');
+                            s.classList.remove('empty');
+                        } else {
+                            s.innerHTML = '&#9734;';
+                            s.classList.add('empty');
+                            s.classList.remove('filled');
+                        }
+                    });
+
+                    ratingValue.textContent = `Rating: ${index + 1}/5`;
+                });
+            });
+        });
+        const backToTopButton = document.getElementById('back-to-top');
+
+        window.onscroll = function () {
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                backToTopButton.style.display = "block";
+            } else {
+                backToTopButton.style.display = "none";
+            }
+        };
+
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+</body>
+
+</html>
