@@ -272,25 +272,83 @@
         }
 
         @media (max-width: 768px) {
+
+            body {
+                font-size: 16px;
+                background-color: #191970;
+                color: black;
+            }
+
+            header {
+                text-align: center;
+                padding: 15px;
+            }
+
             h1 {
-                font-size: 36px;
+                font-size: 32px;
+            }
+
+            nav ul {
+                padding: 0;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 10px;
             }
 
             nav ul li {
-                margin-right: 10px;
+                display: inline-block;
+                margin: 0;
             }
 
-            .poster img {
-                max-width: 200px;
+            nav ul li a {
+                font-size: 14px;
             }
 
-            .trailer iframe {
-                height: 400px;
+            article {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                margin-bottom: 20px;
             }
 
-            .tabs {
-                flex-wrap: wrap;
-                gap: 5px;
+            article img {
+                width: 180px;
+                height: auto;
+                margin-bottom: 10px;
+            }
+
+            article div {
+                max-width: 90%;
+                padding: 10px;
+                font-size: 14px;
+                line-height: 1.5;
+                color: darkred;
+                background-color: #f5f5f5;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                border-radius: 8px;
+            }
+
+            h2 {
+                font-size: 24px;
+                margin-bottom: 10px;
+                text-align: center;
+            }
+
+            h3 {
+                font-size: 18px;
+                margin-bottom: 10px;
+            }
+
+            .stars {
+                justify-content: center;
+                gap: 8px;
+            }
+
+            #back-to-top {
+                bottom: 15px;
+                right: 15px;
+                font-size: 16px;
             }
         }
 
@@ -299,28 +357,36 @@
                 font-size: 28px;
             }
 
-            .poster img {
-                max-width: 150px;
+            nav ul li a {
+                font-size: 12px;
             }
 
-            .episode img {
-                width: 80px;
+            article img {
+                width: 150px;
+                margin-bottom: 8px;
             }
 
-            .trailer iframe {
+            article div {
+                font-size: 12px;
+                padding: 8px;
+            }
+
+            h2 {
+                font-size: 20px;
+            }
+
+            h3 {
+                font-size: 16px;
+            }
+
+            #trailer iframe {
+                width: 100%;
                 height: 300px;
             }
-        }
 
-        section img {
-            width: 150px;
-            height: 220px;
-            margin-right: 20px;
-        }
-
-        .episode img {
-            height: 100px;
-            width: 175px;
+            footer {
+                font-size: 12px;
+            }
         }
     </style>
 </head>
@@ -337,7 +403,6 @@
             <li><a href="#overview">Overview</a></li>
             <li><a href="#seasons">Seasons</a></li>
             <li><a href="#trailer">Trailer</a></li>
-            <li><a href="#"onclick="openContact()">Contact Us</a></li>
         </ul>
     </nav>
 
@@ -447,7 +512,8 @@
                     </div>
                 </div>
                 <div class="episode">
-                    <img src="https://i0.wp.com/www.screenspy.com/wp-content/uploads/2022/03/FireShot-Pro-Webpage-Screenshot-135-Netflix-www.netflix.com_.png?ssl=1 " alt="Episode 9 Thumbnail">
+                    <img src="https://i0.wp.com/www.screenspy.com/wp-content/uploads/2022/03/FireShot-Pro-Webpage-Screenshot-135-Netflix-www.netflix.com_.png?ssl=1 "
+                        alt="Episode 9 Thumbnail">
                     <div class="episode-content">
                         <h4>Episode 9: The Monster You Created</h4>
                         <p><strong>Air Date:</strong> November 20, 2021</p>
@@ -459,7 +525,8 @@
             <div id="season2" class="season-content">
                 <h3>Season 2</h3>
                 <div class="episode">
-                    <img src="https://static0.gamerantimages.com/wordpress/wp-content/uploads/2024/11/arcane-season-2-episode-1-7.jpg" alt="Episode 1 Thumbnail">
+                    <img src="https://static0.gamerantimages.com/wordpress/wp-content/uploads/2024/11/arcane-season-2-episode-1-7.jpg"
+                        alt="Episode 1 Thumbnail">
                     <div class="episode-content">
                         <h4>Episode 1: Heavy Is the Crown</h4>
                         <p><strong>Air Date:</strong> November 8, 2024</p>
@@ -469,7 +536,8 @@
                 </div>
 
                 <div class="episode">
-                    <img src="https://wiki.leagueoflegends.com/en-us/images/Arcane_2x02_Watch_it_All_Burn.jpg?48410" alt="Episode 2 Thumbnail">
+                    <img src="https://wiki.leagueoflegends.com/en-us/images/Arcane_2x02_Watch_it_All_Burn.jpg?48410"
+                        alt="Episode 2 Thumbnail">
                     <div class="episode-content">
                         <h4>Episode 2: Watch It All Burn</h4>
                         <p><strong>Air Date:</strong> November 8, 2024</p>
@@ -479,7 +547,8 @@
                 </div>
 
                 <div class="episode">
-                    <img src="https://static0.gamerantimages.com/wordpress/wp-content/uploads/2024/11/arcane-season-2-episode-3-14.jpg" alt="Episode 3 Thumbnail">
+                    <img src="https://static0.gamerantimages.com/wordpress/wp-content/uploads/2024/11/arcane-season-2-episode-3-14.jpg"
+                        alt="Episode 3 Thumbnail">
                     <div class="episode-content">
                         <h4>Episode 3: Finally Got the Name Right</h4>
                         <p><strong>Air Date:</strong> November 8, 2024</p>
@@ -489,7 +558,8 @@
                 </div>
 
                 <div class="episode">
-                    <img src="https://wiki.leagueoflegends.com/en-us/images/Arcane_2x04_Paint_The_Town_Blue.jpg?8b763" alt="Episode 4 Thumbnail">
+                    <img src="https://wiki.leagueoflegends.com/en-us/images/Arcane_2x04_Paint_The_Town_Blue.jpg?8b763"
+                        alt="Episode 4 Thumbnail">
                     <div class="episode-content">
                         <h4>Episode 4: Paint the Town Blue</h4>
                         <p><strong>Air Date:</strong> November 15, 2024</p>
@@ -499,7 +569,8 @@
                 </div>
 
                 <div class="episode">
-                    <img src="https://wiki.leagueoflegends.com/en-us/images/Arcane_2x05_Blisters_And_Bedrock.jpg?caf40" alt="Episode 5 Thumbnail">
+                    <img src="https://wiki.leagueoflegends.com/en-us/images/Arcane_2x05_Blisters_And_Bedrock.jpg?caf40"
+                        alt="Episode 5 Thumbnail">
                     <div class="episode-content">
                         <h4>Episode 5: Blisters and Bedrock</h4>
                         <p><strong>Air Date:</strong> November 15, 2024</p>
@@ -509,7 +580,8 @@
                 </div>
 
                 <div class="episode">
-                    <img src="https://wiki.leagueoflegends.com/en-us/images/Arcane_2x06_The_Message_Hidden_Within_The_Pattern.jpg?8f299" alt="Episode 6 Thumbnail">
+                    <img src="https://wiki.leagueoflegends.com/en-us/images/Arcane_2x06_The_Message_Hidden_Within_The_Pattern.jpg?8f299"
+                        alt="Episode 6 Thumbnail">
                     <div class="episode-content">
                         <h4>Episode 6: The Message Hidden Within the Pattern</h4>
                         <p><strong>Air Date:</strong> November 15, 2024</p>
@@ -519,7 +591,8 @@
                 </div>
 
                 <div class="episode">
-                    <img src="https://static0.gamerantimages.com/wordpress/wp-content/uploads/2024/11/arcane-season-2-episode-7-12.jpg" alt="Episode 7 Thumbnail">
+                    <img src="https://static0.gamerantimages.com/wordpress/wp-content/uploads/2024/11/arcane-season-2-episode-7-12.jpg"
+                        alt="Episode 7 Thumbnail">
                     <div class="episode-content">
                         <h4>Episode 7: Pretend Like It's the First Time</h4>
                         <p><strong>Air Date:</strong> November 22, 2024</p>
@@ -528,7 +601,8 @@
                 </div>
 
                 <div class="episode">
-                    <img src="https://static0.gamerantimages.com/wordpress/wp-content/uploads/2024/11/arcane-season-2-episode-8-5.jpg" alt="Episode 8 Thumbnail">
+                    <img src="https://static0.gamerantimages.com/wordpress/wp-content/uploads/2024/11/arcane-season-2-episode-8-5.jpg"
+                        alt="Episode 8 Thumbnail">
                     <div class="episode-content">
                         <h4>Episode 8: Killing Is a Cycle</h4>
                         <p><strong>Air Date:</strong> November 22, 2024</p>
@@ -538,7 +612,8 @@
                 </div>
 
                 <div class="episode">
-                    <img src="https://wiki.leagueoflegends.com/en-us/images/Arcane_2x09_The_Dirt_Under_Your_Nails.jpg?c635a" alt="Episode 9 Thumbnail">
+                    <img src="https://wiki.leagueoflegends.com/en-us/images/Arcane_2x09_The_Dirt_Under_Your_Nails.jpg?c635a"
+                        alt="Episode 9 Thumbnail">
                     <div class="episode-content">
                         <h4>Episode 9: The Dirt Under Your Nails</h4>
                         <p><strong>Air Date:</strong> November 22, 2024</p>
@@ -556,7 +631,7 @@
         <div class="trailer">
             <iframe src="https://www.youtube.com/embed/fXmAurh012s" frameborder="0" allowfullscreen></iframe>
         </div>
-    </section>  
+    </section>
     </div>
     <button id="back-to-top" title="Go to top">↑</button>
     <footer>

@@ -4,12 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Conjuring 2</title>
+    <title>Inception</title>
     <style>
         @font-face {
             font-family: "Amazon";
             src: url(fonts/AmazonEmber.ttf);
-        }   
+        }
 
         @font-face {
             font-family: "Choko";
@@ -158,7 +158,6 @@
             font-weight: bold;
         }
 
-
         .stars {
             display: flex;
             gap: 5px;
@@ -178,14 +177,20 @@
         .stars .empty {
             color: #ccc;
         }
-        p 
-        {
 
+        p {
             font-size: 15px;
         }
 
-        @media (max-width: 768px) {
+        a.href-small {
+            font-size: 15px;
+        }
 
+        a.href-large {
+            font-size: 25px;
+        }
+
+        @media (max-width: 768px) {
             body {
                 font-size: 16px;
                 background-color: #191970;
@@ -305,10 +310,9 @@
 </head>
 
 <body>
-
     <header>
-        <h1>The Conjuring 2</h1>
-        <p>Frightening the World with Paranormal Investigation!</p>
+        <h1>Inception</h1>
+        <p>Dreams Within Dreams</p>
     </header>
 
     <nav>
@@ -321,25 +325,19 @@
 
     <div class="content">
         <section id="movie-details">
-            <h2>About The Conjuring 2 (2006)</h2>
+            <h2>About Inception (2010)</h2>
             <article>
-                <img src="https://m.media-amazon.com/images/M/MV5BOTRkMDlmZWEtMzQyYy00YzgyLTgwM2QtNzgxYmIwNGVlYmJlXkEyXkFqcGc@._V1_.jpg"
-                    alt="The Conjuring 2 Poster">
+                <img src="https://m.media-amazon.com/images/M/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_FMjpg_UX1000_.jpg"
+                    alt="Inception Poster">
                 <div>
-                    <h3></h3>
-                    <p>Paranormal investigators Ed and Lorraine Warren travel to London to help a family terrorized by a
-                        malicious spirit. The Conjuring 2 is a chilling supernatural horror film directed by James Wan.
-                        Released in 2016, the movie follows the famous paranormal investigators, Ed and Lorraine Warren,
-                        as they travel to Enfield, England, to help a family plagued by a terrifying and malicious
-                        spirit. Set in the late 1970s, the story revolves around the Hodgson family, whose young
-                        daughter becomes the target of a sinister poltergeist. As the Warrens dig deeper into the
-                        haunting, they uncover dark secrets and face one of the most dangerous cases of their career.
-                        Packed with suspense, emotional drama, and terrifying moments, The Conjuring 2 is a masterful
-                        blend of spine-tingling scares and heartfelt storytelling, solidifying its place as a modern
-                        horror classic.</p>
-                    <p><strong>Director:</strong> James Wan</p>
-                    <p><strong>Stars:</strong> Vera Farmiga, Patrick Wilson, Madison Wolfe</p>
-
+                    <p class="podnadpis"><strong>Director:</strong> Christopher Nolan</p>
+                    <p><strong>Stars:</strong> <a href="leodicap.html" class="href-small">Leonardo
+                            DiCaprio</a>, Joseph Gordon-Levitt,
+                        Ellen Page</p>
+                    <p>Inception is a 2010 science fiction action film directed by Christopher Nolan. Dom Cobb, a
+                        skilled thief who commits corporate espionage by infiltrating the subconscious of his targets,
+                        is offered a chance to regain his old life as payment for a task considered to be impossible:
+                        "inception", the implantation of another person's idea into a target's subconscious.</p>
                     <h3>Rate this Movie:</h3>
                     <div class="stars" id="starRating">
                         <span class="empty">&#9734;</span>
@@ -356,7 +354,7 @@
         <section id="trailer">
             <h2>Watch The Trailer</h2>
             <div>
-                <iframe width="100%" height="800" src="https://www.youtube.com/embed/VFsmuRPClr4" frameborder="0"
+                <iframe width="100%" height="800" src="https://www.youtube.com/embed/YoHD9XEInc0" frameborder="0"
                     allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                     allowfullscreen></iframe>
             </div>
@@ -365,7 +363,7 @@
     <button id="back-to-top" title="Go to top">↑</button>
 
     <footer>
-        <p>© 2024 Fylmyky.</p>
+        <p>© 2024 Inception Media.</p>
     </footer>
 
     <script>

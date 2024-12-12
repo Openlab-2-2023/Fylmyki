@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leonardo DiCaprio</title>
+    <style>
+        @font-face {
+            font-family: "Amazon";
+            src: url(fonts/AmazonEmber.ttf);
+        }
+
+        @font-face {
+            font-family: "Choko";
+            src: url(fonts/Chokokutai-Regular.ttf);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            height: 100%;
+            font-family: Arial, sans-serif;
+            background-color: #191970;
+            color: black;
+            display: flex;
+            flex-direction: column;
+        }
+
+        h1 {
+            font-size: 50px;
+            font-family: "Choko";
+            color: white;
+        }
+
+        header {
+            background-color: #4169E1;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #800020;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style: none;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .content {
+            flex: 1;
+            padding: 20px;
+        }
+
+        section {
+            padding: 20px;
+            margin: 20px;
+            background-color: #f5f5f5;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: darkred;
+            border-bottom: 2px solid #4169E1;
+            padding-bottom: 5px;
+        }
+
+        article {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+
+        article img {
+            width: 150px;
+            height: 220px;
+            margin-right: 20px;
+        }
+
+        article div {
+            max-width: 600px;
+            color: darkred;
+        }
+
+        footer {
+            background-color: #191970;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 5;
+        }
+
+        .contact-popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            z-index: 10;
+            border-radius: 8px;
+            width: 300px;
+        }
+
+        .contact-popup h2 {
+            color: #800020;
+            margin-bottom: 10px;
+        }
+
+        .contact-popup input,
+        .contact-popup textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #4169E1;
+            border-radius: 5px;
+        }
+
+        .contact-popup button {
+            background-color: #4169E1;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .contact-popup button:hover {
+            background-color: #800020;
+        }
+
+        a {
+            color: #800020;
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        .movie-list {
+            display: flex;
+            justify-content: left;
+            gap: 10px;
+            flex-wrap: nowrap;
+            overflow-x: auto;
+            padding: 10px 0;
+        }
+
+        .movie {
+            text-align: center;
+            flex: 0 0 auto;
+            width: 150px;
+        }
+
+        .movie img {
+            width: 150px;
+            height: auto;
+            border: 2px solid #800020;
+            border-radius: 10px;
+        }
+
+        .movie p {
+            margin-top: 5px;
+            font-weight: bold;
+            color: #800020;
+        }
+
+        #back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #4169E1;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 50%;
+            font-size: 18px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            display: none;
+            z-index: 1000;
+        }
+
+        #back-to-top:hover {
+            background-color: #800020;
+        }
+
+        @media only screen and (max-width: 600px) {
+            h1 {
+                font-size: 2.5rem;
+                text-align: center;
+                margin-bottom: 10px;
+            }
+
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav ul li {
+                display: block;
+                margin: 5px 0;
+            }
+
+            article {
+                flex-direction: column;
+            }
+
+            article img {
+                width: 100%;
+                height: auto;
+                margin-bottom: 10px;
+            }
+
+            .movie-list {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .movie {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+        }
+
+        .contact-popup {
+            width: 80%;
+            max-width: 300px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Leonardo DiCaprio</h1>
+        <p>If shes over 20 she expired</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#about-leonardo">About Leonardo</a></li>
+            <li><a href="#works">Notable Works</a></li>
+            <li><a href="#" onclick="openContact()">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <div class="content">
+        <section id="about-leonardo">
+            <h2>About Leonardo DiCaprio</h2>
+            <article>
+                <img src="https://m.media-amazon.com/images/M/MV5BMjI0MTg3MzI0M15BMl5BanBnXkFtZTcwMzQyODU2Mw@@._V1_FMjpg_UX1000_.jpg"
+                    alt="Leonardo DiCaprio">
+                <div>
+                    <p>Leonardo DiCaprio is an acclaimed actor and environmental activist who has left an indelible
+                        mark on the world of cinema. Known for his intense performances and commitment to his craft,
+                        DiCaprio has garnered numerous accolades and the admiration of fans worldwide.</p>
+                    <p>From groundbreaking roles in *Titanic* and *Inception* to Oscar-winning performances in *The
+                        Revenant*, DiCaprio continues to redefine excellence in acting while advocating for a more
+                        sustainable planet.</p>
+                </div>
+            </article>
+        </section>
+
+        <section id="works">
+            <h2>Notable Works</h2>
+            <div class="movie-list">
+                <div class="movie">
+                    <img src="https://m.media-amazon.com/images/I/71ZJ8am0mKL.jpg"
+                        alt="Titanic">
+                    <p>Titanic</p>
+                </div>
+                <div class="movie">
+                    <img src="https://m.media-amazon.com/images/M/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_FMjpg_UX1000_.jpg"
+                        alt="Inception">
+                    <p>Inception</p>
+                </div>
+                <div class="movie">
+                    <img src="https://m.media-amazon.com/images/I/A1BjliXNDPL.jpg"
+                        alt="The Revenant">
+                    <p>The Revenant</p>
+                </div>
+                <div class="movie">
+                    <img src="https://m.media-amazon.com/images/M/MV5BMjIxMjgxNTk0MF5BMl5BanBnXkFtZTgwNjIyOTg2MDE@._V1_.jpg"
+                        alt="The Wolf of Wall Street">
+                    <p>The Wolf of Wall Street</p>
+                </div>
+                <div class="movie">
+                    <img src="https://m.media-amazon.com/images/M/MV5BN2FjNWExYzEtY2YzOC00YjNlLTllMTQtNmIwM2Q1YzBhOWM1XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg"
+                        alt="Shutter Island">
+                    <p>Shutter Island</p>
+                </div>
+                <div class="movie">
+                    <img src="https://m.media-amazon.com/images/M/MV5BMTY5MzYzNjc5NV5BMl5BanBnXkFtZTYwNTUyNTc2._V1_.jpg"
+                        alt="Catch Me If You Can">
+                    <p>Catch Me If You Can</p>
+                </div>
+                <div class="movie">
+                    <img src="https://m.media-amazon.com/images/M/MV5BMjIyNTQ5NjQ1OV5BMl5BanBnXkFtZTcwODg1MDU4OA@@._V1_FMjpg_UX1000_.jpg"
+                        alt="Django Unchained">
+                    <p>Django Unchained</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="awards">
+            <h2>Awards and Achievements</h2>
+            <ul>
+                <li><strong>Academy Awards:</strong>
+                    <ul>
+                        <li>Best Actor for *The Revenant* (2016)</li>
+                    </ul>
+                </li>
+                <li><strong>Golden Globe Awards:</strong>
+                    <ul>
+                        <li>Best Actor in a Motion Picture - Drama for *The Revenant* (2016)</li>
+                        <li>Best Actor in a Motion Picture - Musical or Comedy for *The Wolf of Wall Street* (2014)</li>
+                        <li>Best Actor in a Motion Picture - Drama for *The Aviator* (2005)</li>
+                    </ul>
+                </li>
+                <li><strong>BAFTA Awards:</strong>
+                    <ul>
+                        <li>Best Leading Actor for *The Revenant* (2016)</li>
+                    </ul>
+                </li>
+                <li><strong>Screen Actors Guild Awards:</strong>
+                    <ul>
+                        <li>Outstanding Performance by a Male Actor in a Leading Role for *The Revenant* (2016)</li>
+                    </ul>
+                </li>
+                <li><strong>Environmental Activism:</strong>
+                    <ul>
+                        <li>UN Messenger of Peace for climate change efforts (2014)</li>
+                        <li>Founder of the Leonardo DiCaprio Foundation promoting environmental awareness.</li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+
+    </div>
+
+    <div class="overlay" id="overlay" onclick="closeContact()"></div>
+    <div class="contact-popup" id="contactPopup">
+        <h2>Contact Us</h2>
+        <form>
+            <input type="text" placeholder="Your Name" " required>
+            <input type=" email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" rows="4" required></textarea>
+            <button type="submit">Send</button>
+            <button type="button" onclick="closeContact()">Cancel</button>
+        </form>
+    </div>
+
+    <button id="back-to-top" onclick="scrollToTop()">↑</button>
+
+    <footer>
+        <p>&copy; 2024 Fylmyky. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Back-to-Top Button
+        const backToTopButton = document.getElementById("back-to-top");
+
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 300) {
+                backToTopButton.style.display = "block";
+            } else {
+                backToTopButton.style.display = "none";
+            }
+        });
+
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        }
+
+        // Contact Popup
+        const overlay = document.getElementById("overlay");
+        const contactPopup = document.getElementById("contactPopup");
+
+        function openContact() {
+            overlay.style.display = "block";
+            contactPopup.style.display = "block";
+        }
+
+        function closeContact() {
+            overlay.style.display = "none";
+            contactPopup.style.display = "none";
+        }
+    </script>
+</body>
+
+</html>
