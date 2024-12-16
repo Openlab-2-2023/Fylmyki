@@ -125,6 +125,19 @@
             color: darkred;
         }
 
+        /* Styles for thicker "Stars:" and "Director:" labels */
+        .podnadpis strong,
+        .movie-details strong {
+            font-weight: 800; /* Thicker font weight for the labels */
+        }
+
+        /* Keeping linked text like "Leonardo DiCaprio" lighter */
+        a {
+            font-weight: normal;
+            color: #800020;
+            font-size: 15px;
+        }
+
         footer {
             background-color: #191970;
             color: white;
@@ -150,32 +163,6 @@
             height: 100%;
             background-color: rgba(0, 0, 0, 0.5);
             z-index: 5;
-        }
-
-        a {
-            color: #800020;
-            font-size: 25px;
-            font-weight: bold;
-        }
-
-        .stars {
-            display: flex;
-            gap: 5px;
-            font-size: 40px;
-            color: #ffd700;
-            cursor: pointer;
-        }
-
-        .stars i {
-            pointer-events: none;
-        }
-
-        .stars .filled {
-            color: #ffd700;
-        }
-
-        .stars .empty {
-            color: #ccc;
         }
 
         p {
@@ -258,52 +245,10 @@
                 margin-bottom: 10px;
             }
 
-            .stars {
-                justify-content: center;
-                gap: 8px;
-            }
-
             #back-to-top {
                 bottom: 15px;
                 right: 15px;
                 font-size: 16px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            h1 {
-                font-size: 28px;
-            }
-
-            nav ul li a {
-                font-size: 12px;
-            }
-
-            article img {
-                width: 150px;
-                margin-bottom: 8px;
-            }
-
-            article div {
-                font-size: 12px;
-                padding: 8px;
-            }
-
-            h2 {
-                font-size: 20px;
-            }
-
-            h3 {
-                font-size: 16px;
-            }
-
-            #trailer iframe {
-                width: 100%;
-                height: 300px;
-            }
-
-            footer {
-                font-size: 12px;
             }
         }
     </style>
@@ -317,9 +262,9 @@
 
     <nav>
         <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="#movie-details">Movie Details</a></li>
-            <li><a href="#trailer">Trailer</a></li>
+            <li><a class="href-large" href="index.html">Home</a></li>
+            <li><a class="href-large" href="#movie-details">Movie Details</a></li>
+            <li><a class="href-large" href="#trailer">Trailer</a></li>
         </ul>
     </nav>
 
@@ -331,22 +276,13 @@
                     alt="Inception Poster">
                 <div>
                     <p class="podnadpis"><strong>Director:</strong> Christopher Nolan</p>
-                    <p><strong>Stars:</strong> <a href="leodicap.html" class="href-small">Leonardo
+                    <p class="podnadpis"><strong>Stars:</strong> <a href="leodicap.html" class="href-small">Leonardo
                             DiCaprio</a>, Joseph Gordon-Levitt,
                         Ellen Page</p>
                     <p>Inception is a 2010 science fiction action film directed by Christopher Nolan. Dom Cobb, a
                         skilled thief who commits corporate espionage by infiltrating the subconscious of his targets,
                         is offered a chance to regain his old life as payment for a task considered to be impossible:
                         "inception", the implantation of another person's idea into a target's subconscious.</p>
-                    <h3>Rate this Movie:</h3>
-                    <div class="stars" id="starRating">
-                        <span class="empty">&#9734;</span>
-                        <span class="empty">&#9734;</span>
-                        <span class="empty">&#9734;</span>
-                        <span class="empty">&#9734;</span>
-                        <span class="empty">&#9734;</span>
-                    </div>
-                    <p id="ratingValue">Rating: 0/5</p>
                 </div>
             </article>
         </section>
