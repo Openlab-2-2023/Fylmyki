@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Christmas Movie Advent Calendar</title>
+    <style>
+        @font-face {
+            font-family: "Amazon";
+            src: url(fonts/AmazonEmber.ttf);
+        }
+
+        @font-face {
+            font-family: "Choko";
+            src: url(fonts/Chokokutai-Regular.ttf);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            height: 100%;
+            font-family: Arial, sans-serif;
+            background-color: #191970;
+            color: black;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 {
+            font-size: 50px;
+            font-family: "Choko";
+            color: white;
+            margin: 20px 0;
+            text-shadow: 2px 2px 5px #FF0000;
+        }
+
+        header {
+            width: 100%;
+            background-color: #800020;
+            padding: 10px;
+            text-align: center;
+            position: relative;
+        }
+
+        .home-button {
+            position: absolute;
+            top: 50%;
+            left: 20px;
+            transform: translateY(-50%);
+            background-color: #4169E1;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .home-button:hover {
+            background-color: #FF0000;
+        }
+
+        .calendar {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 15px;
+            margin: 20px;
+            max-width: 900px;
+            width: 100%;
+        }
+
+        .day {
+            width: 100%;
+            padding: 20px;
+            background-color: #800020;
+            color: white;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            border: 2px solid white;
+            border-radius: 10px;
+            cursor: pointer;
+            position: relative;
+            background-image: url('https://www.transparenttextures.com/patterns/stardust.png');
+        }
+
+        .day:hover {
+            background-color: #4169E1;
+        }
+
+        .day .movie {
+            display: none;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            background-color: white;
+            color: black;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 10;
+        }
+
+        .day img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .day.active .movie {
+            display: block;
+        }
+
+        footer {
+            width: 100%;
+            background-color: #800020;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+            font-size: 14px;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        @media only screen and (max-width: 600px) {
+            .calendar {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 10px;
+            }
+
+            .home-button {
+                left: 10px;
+                padding: 8px 12px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <button class="home-button" onclick="location.href='index.html';">Home</button>
+        <h1>Christmas Movie Advent Calendar</h1>
+    </header>
+
+    <div class="calendar"> <!-- Explicitly writing out each day -->
+        <div class="day" onclick="revealMovie(this)">1</div>
+        <div class="day" onclick="revealMovie(this)">2</div>
+        <div class="day" onclick="revealMovie(this)">3</div>
+        <div class="day" onclick="revealMovie(this)">4</div>
+        <div class="day" onclick="revealMovie(this)">5</div>
+        <div class="day" onclick="revealMovie(this)"> 6 <div class="movie"> <img src="" alt="Home Alone">
+                <p>Movie Title</p>
+            </div>
+        </div>
+        <div class="day" onclick="revealMovie(this)">7</div>
+        <div class="day" onclick="revealMovie(this)">8</div>
+        <div class="day" onclick="revealMovie(this)">9</div>
+        <div class="day" onclick="revealMovie(this)">10</div>
+        <div class="day" onclick="revealMovie(this)">11</div>
+        <div class="day" onclick="revealMovie(this)"> 12 <div class="movie"> <img src="https://via.placeholder.com/150"
+                    alt="Movie Poster">
+                <p>Movie Title</p>;
+            </div>
+        </div>
+        <div class="day" onclick="revealMovie(this)">13</div>
+        <div class="day" onclick="revealMovie(this)">14</div>
+        <div class="day" onclick="revealMovie(this)">15</div>
+        <div class="day" onclick="revealMovie(this)">16</div>
+        <div class="day" onclick="revealMovie(this)">17</div>
+        <div class="day" onclick="revealMovie(this)"> 18 <div class="movie"> <img src="https://via.placeholder.com/150"
+                    alt="Movie Poster">
+                <p>Movie Title</p>
+            </div>
+        </div>
+        <div class="day" onclick="revealMovie(this)">19</div>
+        <div class="day" onclick="revealMovie(this)">20</div>
+        <div class="day" onclick="revealMovie(this)">21</div>
+        <div class="day" onclick="revealMovie(this)">22</div>
+        <div class="day" onclick="revealMovie(this)">23</div>
+        <div class="day" onclick="revealMovie(this)"> 24 <div class="movie"> <img src="https://via.placeholder.com/150"
+                    alt="Movie Poster">
+                <p>Movie Title</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2024 Christmas Advent Calendar. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        function revealMovie(dayElement) {
+            dayElement.classList.toggle('active');
+        }
+    </script>
+
+</body>
+
+</html>
