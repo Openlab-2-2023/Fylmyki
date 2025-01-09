@@ -38,12 +38,11 @@
             font-family: "Choko";
             color: white;
             margin: 20px 0;
-            text-shadow: 2px 2px 5px #FF0000;
         }
 
         header {
             width: 100%;
-            background-color: #800020;
+            background-color: #4169E1;
             padding: 10px;
             text-align: center;
             position: relative;
@@ -51,9 +50,8 @@
 
         .home-button {
             position: absolute;
-            top: 50%;
+            top: 20px;
             left: 20px;
-            transform: translateY(-50%);
             background-color: #4169E1;
             color: white;
             border: none;
@@ -61,10 +59,19 @@
             border-radius: 5px;
             font-size: 16px;
             cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            z-index: 1000;
         }
 
         .home-button:hover {
             background-color: #FF0000;
+        }
+
+        .home-button img {
+            width: 20px;
+            height: 20px;
         }
 
         .calendar {
@@ -121,7 +128,7 @@
 
         footer {
             width: 100%;
-            background-color: #800020;
+            background-color:#191970;
             color: white;
             text-align: center;
             padding: 10px;
@@ -145,13 +152,21 @@
                 font-size: 14px;
             }
         }
-    </style>
+        p1 {
+            color: white;
+        }
+    </style>    
 </head>
 
 <body>
+    <button class="home-button" onclick="location.href='index.html';">
+        <img src="https://cdn-icons-png.flaticon.com/512/1946/1946488.png" alt="Home Icon">
+        Home
+    </button>
     <header>
-        <button class="home-button" onclick="location.href='index.html';">Home</button>
+        <div class="christmas-decoration"></div>
         <h1>Christmas Movie Advent Calendar</h1>
+        <p1>Movie for every day of Advent</p1>
     </header>
 
     <div class="calendar">
@@ -169,9 +184,8 @@
         <div class="day" onclick="revealMovie(this)">9</div>
         <div class="day" onclick="revealMovie(this)">10</div>
         <div class="day" onclick="revealMovie(this)">11</div>
-        <div class="day" onclick="revealMovie(this)"> 12 <div class="movie"> <img src="https://via.placeholder.com/150"
-                    alt="Movie Poster">
-                <p>Movie Title</p>;
+        <div class="day" onclick="revealMovie(this)"> 12 <div class="movie"> <img src="https://lumiere-a.akamaihd.net/v1/images/image_ee104279.jpeg?region=0%2C0%2C800%2C1200" alt="Movie Poster">
+                <p>Miracle on 34th Street</p>
             </div>
         </div>
         <div class="day" onclick="revealMovie(this)">13</div>
@@ -179,9 +193,8 @@
         <div class="day" onclick="revealMovie(this)">15</div>
         <div class="day" onclick="revealMovie(this)">16</div>
         <div class="day" onclick="revealMovie(this)">17</div>
-        <div class="day" onclick="revealMovie(this)"> 18 <div class="movie"> <img src="https://via.placeholder.com/150"
-                    alt="Movie Poster">
-                <p>Movie Title</p>
+        <div class="day" onclick="revealMovie(this)"> 18 <div class="movie"> <img src="https://m.media-amazon.com/images/M/MV5BZDA3MzdlYTQtMTUxNi00ZjJmLTkyOTYtNDkzYmIzYTJkZjMzXkEyXkFqcGc@._V1_.jpg" alt="Movie Poster">
+                <p>The Guardians of the Galaxy Holiday Special</p>
             </div>
         </div>
         <div class="day" onclick="revealMovie(this)">19</div>
@@ -189,15 +202,14 @@
         <div class="day" onclick="revealMovie(this)">21</div>
         <div class="day" onclick="revealMovie(this)">22</div>
         <div class="day" onclick="revealMovie(this)">23</div>
-        <div class="day" onclick="revealMovie(this)"> 24 <div class="movie"> <img src="https://via.placeholder.com/150"
-                    alt="Movie Poster">
-                <p>Movie Title</p>
+        <div class="day" onclick="revealMovie(this)"> 24 <div class="movie"> <img src="https://m.media-amazon.com/images/M/MV5BNDAwMjFhYTEtNzYyMS00YmY2LTg3MGEtZTRkNWNiMDI4MDRkXkEyXkFqcGc@._V1_.jpg" alt="Movie Poster">
+                <p>How the Grinch Stole Christmas</p>
             </div>
         </div>
     </div>
 
     <footer>
-        <p>© 2024 Christmas Advent Calendar. All Rights Reserved.</p>
+        <p>© 2024 Fylmyki.</p>
     </footer>
 
     <script>
