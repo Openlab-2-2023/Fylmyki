@@ -128,7 +128,7 @@
 
         footer {
             width: 100%;
-            background-color:#191970;
+            background-color: #191970;
             color: white;
             text-align: center;
             padding: 10px;
@@ -152,10 +152,32 @@
                 font-size: 14px;
             }
         }
+
         p1 {
             color: white;
         }
-    </style>    
+
+        /* Snowflake styles */
+        .snowflake {
+            position: fixed;
+            top: -50px;
+            color: white;
+            font-size: 1em;
+            user-select: none;
+            pointer-events: none;
+            animation: fall linear infinite;
+        }
+
+        @keyframes fall {
+            0% {
+                transform: translateY(0) rotate(0deg);
+            }
+
+            100% {
+                transform: translateY(100vh) rotate(360deg);
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -164,7 +186,6 @@
         Home
     </button>
     <header>
-        <div class="christmas-decoration"></div>
         <h1>Christmas Movie Advent Calendar</h1>
         <p1>Movie for every day of Advent</p1>
     </header>
@@ -216,8 +237,25 @@
         function revealMovie(dayElement) {
             dayElement.classList.toggle('active');
         }
-    </script>
 
+        // Snowflake animation
+        function createSnowflake() {
+            const snowflake = document.createElement('div');
+            snowflake.classList.add('snowflake');
+            snowflake.textContent = '❄';
+            snowflake.style.left = Math.random() * 100 + 'vw';
+            snowflake.style.animationDuration = Math.random() * 3 + 2 + 's';
+            snowflake.style.fontSize = Math.random() * 10 + 10 + 'px';
+
+            document.body.appendChild(snowflake);
+
+            setTimeout(() => {
+                snowflake.remove();
+            }, 5000);
+        }
+
+        setInterval(createSnowflake, 200);
+    </script>
 </body>
 
 </html>
