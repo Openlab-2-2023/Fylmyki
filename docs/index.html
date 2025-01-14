@@ -17,7 +17,7 @@
             font-family: "Choko";
             src: url(fonts/Chokokutai-Regular.ttf);
         }
-        
+
 
         h1 {
             font-size: 50px;
@@ -312,6 +312,35 @@
             background: #f1f1f1;
         }
 
+        .tooltip {
+            position: absolute;
+            bottom: -40px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 8px 12px;
+            border-radius: 5px;
+            font-size: 14px;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+            white-space: nowrap;
+            pointer-events: none;
+            width: 50px;
+            height: 50px;
+        }
+
+        header:hover .tooltip {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        header {
+            position: relative;
+            cursor: pointer;
+        }
+
         @media only screen and (max-width: 100%) {
             body {
                 font-size: 14px;
@@ -362,6 +391,10 @@
     <header>
         <h1>Fylmyki</h1>
         <p1>Let the ratings guide you!</p1>
+        <div class="tooltip"><img
+                src="https://preview.redd.it/absolute-cinema-v0-9bxk3ltdco7e1.jpg?width=640&crop=smart&auto=webp&s=30701cb006b3d6f051b8b3aa6bc980a5b44d7ba6"
+                alt="Conjuring 2 Poster"></div>
+
     </header>
 
     <nav>
@@ -371,7 +404,7 @@
             <li><a href="#tvshows">TV Shows</a></li>
             <li><a href="#celebrities">Celebrities</a></li>
             <li><a href="#" onclick="openContact()">Contact Us</a></li>
-           <li><a href="adventcalendar.html">🎄Advent Calendar🎄</a></li>    
+            <li><a href="adventcalendar.html">🎄Advent Calendar🎄</a></li>
         </ul>
     </nav>
 
