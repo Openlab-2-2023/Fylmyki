@@ -243,17 +243,14 @@
 
     <script>
         function revealMovie(dayElement) {
-            // Close any currently active advent window
             const activeDay = document.querySelector('.day.active');
             if (activeDay && activeDay !== dayElement) {
                 activeDay.classList.remove('active');
             }
 
-            // Toggle the current day
             dayElement.classList.toggle('active');
         }
 
-        // Snowflake animation
         function createSnowflake() {
             const snowflake = document.createElement('div');
             snowflake.classList.add('snowflake');
